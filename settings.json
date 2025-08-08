@@ -15,6 +15,7 @@
       "Bash(grep:*)",
       "Bash(git checkout:*)",
       "Bash(git add:*)",
+      "Bash(git log:*)",
       "mcp__playwright__browser_navigate",
       "mcp__playwright__browser_snapshot",
       "mcp__playwright__browser_click",
