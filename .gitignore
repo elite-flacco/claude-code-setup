@@ -1,0 +1,9 @@
+/logs
+/shell-snapshots
+/ide
+/statsig
+/todos
+/projects
+/backups
+.credentials.json
+settings.json.backup
