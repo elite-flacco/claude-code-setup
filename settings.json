@@ -13,6 +13,8 @@
       "Bash(npm run test:*)",
       "Bash(npm run typecheck:*)",
       "Bash(grep:*)",
+      "Bash(mv:*)",
+      "Bash(mkdir:*)",
       "Bash(git checkout:*)",
       "Bash(git add:*)",
       "Bash(git log:*)",
@@ -27,7 +29,8 @@
       "mcp__playwright__browser_take_screenshot",
       "mcp__playwright__browser_hover",
       "mcp__playwright__browser_close",
-      "mcp__playwright__browser_resize"
+      "mcp__playwright__browser_resize",
+      "mcp__playwright__browser_navigate_back"
     ],
     "deny": ["Read(.env)", "Write(.env)", "Edit(.env)"]
   },

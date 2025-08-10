@@ -1,3 +1,8 @@
+---
+allowed-tools: Bash(git commit:*)
+description: Create a commit
+---
+
 # Claude Command: Commit
 
 This command helps you create well-formatted commits with conventional commit messages and emoji.
