@@ -1,0 +1,1 @@
+Remove Git worktree $ARGUMENTS and delete the directory.
