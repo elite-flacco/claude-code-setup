@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(git commit:*)
+allowed-tools: Bash(git commit:*), Bash(git push:*)
 description: Create a commit
 ---
 
@@ -24,13 +24,17 @@ Or with options:
 1. Unless specified with `--no-verify`, automatically runs pre-commit checks:
    - `npm run lint` to ensure code quality
    - `npm run build` to verify the build succeeds
+   - `npm run test` to verify the tests succeed
+   - `npm run typecheck` to verify the types succeed
 2. Update README.md as needed
 3. Checks which files are staged with `git status`
 4. If 0 files are staged, automatically adds all modified and new files with `git add`
-5. Performs a `git diff` to understand what changes are being committed
-6. Analyzes the diff to determine if multiple distinct logical changes are present
-7. If multiple distinct changes are detected, suggests breaking the commit into multiple smaller commits
-8. For each commit (or the single commit if not split), creates a commit message using emoji conventional commit format
+5. DO NOT add any unstaged changes
+6. Performs a `git diff` to understand what changes are being committed
+7. Analyzes the diff to determine if multiple distinct logical changes are present
+8. If multiple distinct changes are detected, suggests breaking the commit into multiple smaller commits
+9. For each commit (or the single commit if not split), creates a commit message using emoji conventional commit format
+10. If currently on main branch, PUSH to remote after committing
 
 ## Best Practices for Commits
 
@@ -159,7 +163,7 @@ Example of splitting commits:
 
 ## Important Notes
 
-- By default, pre-commit checks (`npm run lint`, `npm run build`) will run to ensure code quality
+- By default, pre-commit checks (`npm run lint`, `npm run build`, `npm run test`, `npm run typecheck`) will run to ensure code quality
 - If these checks fail, you'll be asked if you want to proceed with the commit anyway or fix the issues first
 - If specific files are already staged, the command will only commit those files
 - If no files are staged, it will automatically stage all modified and new files
