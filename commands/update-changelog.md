@@ -1,10 +1,22 @@
-# Add Changelog Command
+# Update Changelog Command
 
 Generate and maintain project changelog
 
+## Usage
+
+To update changelog, just type:
+```
+/update-changelog
+```
+
+Or with options:
+```
+/update-changelog --no-version
+```
+
 ## Instructions
 
-Setup and maintain changelog following these steps: **$ARGUMENTS**
+Setup and maintain changelog following the instructions below. When `--no-version` is specified, do not add a version entry to the changelog, otherwise add a version entry to the changelog using today's date.
 
 1. **Changelog Format (Keep a Changelog)**
    ```markdown
@@ -70,11 +82,5 @@ Setup and maintain changelog following these steps: **$ARGUMENTS**
    test: add unit tests for auth
    chore: update dependencies
    ```
-
-5. **Integration with Releases**
-   - Update changelog before each release
-   - Include in release notes
-   - Link to GitHub releases
-   - Tag versions consistently
 
 Remember to keep entries clear, categorized, and focused on user-facing changes.
