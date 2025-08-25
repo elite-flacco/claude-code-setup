@@ -4,7 +4,7 @@ A comprehensive Claude Code workspace configuration with custom commands, specia
 
 ## Overview
 
-This workspace provides a collection of custom commands and agents designed to enhance development workflows with Claude Code. It includes tools for git workflow automation, design system setup, and project initialization.
+This workspace provides a collection of custom commands and agents designed to enhance development workflows with Claude Code. It includes tools such as git workflow automation, design system setup, and project initialization.
 
 ## Features
 
@@ -23,16 +23,26 @@ This workspace provides a collection of custom commands and agents designed to e
 - **setup-design-system-tw-v4** - Tailwind CSS v4 specific design system setup
 - **design-mode** - Switch projects into design/prototyping mode
 
+### Supabase Commands
+- **deploy-supabase-edge-function** - Deploy edge functions to Supabase with automated setup
+
 ### Maintenance Commands
 - **update-readme** - Automatically update README files based on recent changes
-- **add-changelog** - Generate and maintain changelog entries
+- **update-changelog** - Generate and maintain changelog entries
 
 ## Recent Updates
 
-### v0.1.0 - 2025-08-08
+### v0.3.0 - 2025-08-25
+- ✨ Added OpenAI agent with comprehensive API playbook for modern OpenAI development
+- ✨ Added Supabase edge function deployment command with automated CLI setup
+- 📝 Enhanced project documentation and changelog maintenance
+
+### v0.2.0 - 2025-08-23
 - ✨ Added git worktree command definitions with proper tool permissions
 - 📝 Enhanced commit command documentation with comprehensive checks
 - ✨ Comprehensive design system setup commands for modern web development
+
+### v0.1.0 - 2025-08-08
 - 🔧 MCP server installation automation (playwright, context7)
 - 🎉 Initial Claude Code workspace setup with project structure
 
@@ -52,9 +62,13 @@ Commands are available via Claude Code's slash command interface:
 /create-worktree feature-branch-name
 /setup-design-system
 /update-readme
+/commit
 ```
 
 Agents can be invoked through Claude Code's agent system when working on relevant tasks.
+
+### Available Agents
+- **openai** - Comprehensive OpenAI API implementation guidance covering Responses API, structured outputs, tool use, streaming, and realtime features
 
 ## File Structure
 
@@ -71,6 +85,7 @@ Agents can be invoked through Claude Code's agent system when working on relevan
 - **MCP Server Integration** - Automated installation and configuration
 - **Git Workflow Automation** - Streamlined branching and merging
 - **Design System Generation** - One-command design system setup
+- **Supabase Deployment** - Automated edge function deployment with CLI setup
 - **Documentation Maintenance** - Automated README and changelog updates
 
 ## Getting Started
