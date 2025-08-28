@@ -19,17 +19,18 @@ Or with options:
 /commit --no-verify
 ```
 
-## What This Command Does
+## Instructions
 
 1. Unless specified with `--no-verify`, automatically runs pre-commit checks:
    - `npm run lint` to ensure code quality
-   - `npm run build` to verify the build succeeds
+   - `npm run build` to verify the build succeeds (remove build cache first)
    - `npm run test` to verify the tests succeed
    - `npm run typecheck` to verify the types succeed
+   - `npm run format:check` to check for code style issues
 2. Update README.md as needed
 3. Checks which files are staged with `git status`
 4. If 0 files are staged, automatically adds all modified and new files with `git add`
-5. DO NOT add any unstaged changes
+5. DO NOT add any untracked files if there are already staged files
 6. Performs a `git diff` to understand what changes are being committed
 7. Analyzes the diff to determine if multiple distinct logical changes are present
 8. If multiple distinct changes are detected, suggests breaking the commit into multiple smaller commits
@@ -41,7 +42,7 @@ Or with options:
 - **Verify before committing**: Ensure code is linted, builds correctly, and documentation is updated
 - **Atomic commits**: Each commit should contain related changes that serve a single purpose
 - **Split large changes**: If changes touch multiple concerns, split them into separate commits
-- **Conventional commit format**: Use the format `<type>: <description>` where type is one of:
+- **Conventional commit format**: Use the format `<type>(<scope>): <description>` where type is one of:
   - `feat`: A new feature
   - `fix`: A bug fix
   - `docs`: Documentation changes
@@ -54,68 +55,52 @@ Or with options:
 - **Concise first line**: Keep the first line under 72 characters
 - **Emoji**: Each commit type is paired with an appropriate emoji:
   - ✨ `feat`: New feature
+  - 🏷️ `feat`: Add or update types
+  - 🌐 `feat`: Internationalization and localization
+  - 📱 `feat`: Work on responsive design
+  - 🚸 `feat`: Improve user experience / usability
+  - 📈 `feat`: Add or update analytics or tracking code
+  - 💥 `feat`: Introduce breaking changes
+  - ♿️ `feat`: Improve accessibility
+  - 🚩 `feat`: Add, update, or remove feature flags
+  - 🦺 `feat`: Add or update code related to validation
+  - ✈️ `feat`: Improve offline support
   - 🐛 `fix`: Bug fix
-  - 📝 `docs`: Documentation
-  - 💄 `style`: Formatting/style
-  - ♻️ `refactor`: Code refactoring
-  - ⚡️ `perf`: Performance improvements
-  - ✅ `test`: Tests
-  - 🔧 `chore`: Tooling, configuration
-  - 🚀 `ci`: CI/CD improvements
-  - 🗑️ `revert`: Reverting changes
-  - 🧪 `test`: Add a failing test
   - 🚨 `fix`: Fix compiler/linter warnings
   - 🔒️ `fix`: Fix security issues
+  - 🩹 `fix`: Simple fix for a non-critical issue
+  - 🥅 `fix`: Catch errors
+  - 👽️ `fix`: Update code due to external API changes
+  - 🔥 `fix`: Remove code or files
+  - 🚑️ `fix`: Critical hotfix
+  - 💚 `fix`: Fix CI build
+  - ✏️ `fix`: Fix typos
+  - 🔇 `fix`: Remove logs
+  - 🔧 `chore`: Tooling, configuration
   - 👥 `chore`: Add or update contributors
-  - 🚚 `refactor`: Move or rename resources
-  - 🏗️ `refactor`: Make architectural changes
   - 🔀 `chore`: Merge branches
   - 📦️ `chore`: Add or update compiled files or packages
   - ➕ `chore`: Add a dependency
   - ➖ `chore`: Remove a dependency
   - 🌱 `chore`: Add or update seed files
-  - 🧑‍💻 `chore`: Improve developer experience
-  - 🧵 `feat`: Add or update code related to multithreading or concurrency
-  - 🔍️ `feat`: Improve SEO
-  - 🏷️ `feat`: Add or update types
-  - 💬 `feat`: Add or update text and literals
-  - 🌐 `feat`: Internationalization and localization
-  - 👔 `feat`: Add or update business logic
-  - 📱 `feat`: Work on responsive design
-  - 🚸 `feat`: Improve user experience / usability
-  - 🩹 `fix`: Simple fix for a non-critical issue
-  - 🥅 `fix`: Catch errors
-  - 👽️ `fix`: Update code due to external API changes
-  - 🔥 `fix`: Remove code or files
-  - 🎨 `style`: Improve structure/format of the code
-  - 🚑️ `fix`: Critical hotfix
+  - 🧑 `chore`: Improve developer experience
   - 🎉 `chore`: Begin a project
   - 🔖 `chore`: Release/Version tags
-  - 🚧 `wip`: Work in progress
-  - 💚 `fix`: Fix CI build
   - 📌 `chore`: Pin dependencies to specific versions
-  - 👷 `ci`: Add or update CI build system
-  - 📈 `feat`: Add or update analytics or tracking code
-  - ✏️ `fix`: Fix typos
-  - ⏪️ `revert`: Revert changes
   - 📄 `chore`: Add or update license
-  - 💥 `feat`: Introduce breaking changes
-  - 🍱 `assets`: Add or update assets
-  - ♿️ `feat`: Improve accessibility
-  - 💡 `docs`: Add or update comments in source code
-  - 🗃️ `db`: Perform database related changes
-  - 🔊 `feat`: Add or update logs
-  - 🔇 `fix`: Remove logs
-  - 🤡 `test`: Mock things
-  - 🥚 `feat`: Add or update an easter egg
   - 🙈 `chore`: Add or update .gitignore file
-  - 📸 `test`: Add or update snapshots
-  - ⚗️ `experiment`: Perform experiments
-  - 🚩 `feat`: Add, update, or remove feature flags
-  - 💫 `ui`: Add or update animations and transitions
-  - ⚰️ `refactor`: Remove dead code
-  - 🦺 `feat`: Add or update code related to validation
-  - ✈️ `feat`: Improve offline support
+  - 🎨 `style`: Improve structure/format of the code
+  - 💄 `style`: Formatting/style
+  - 🍱 `assets`: Add or update assets
+  - 📝 `docs`: Documentation
+  - ♻️ `refactor`: Code refactoring
+  - 🚚 `refactor`: Move or rename resources
+  - 🏗️ `refactor`: Make architectural changes
+  - ⚡️ `perf`: Performance improvements
+  - ✅ `test`: Tests
+  - 🤡 `test`: Mock things
+  - 🚀 `ci`: CI/CD improvements
+  - 🗃️ `db`: Perform database related changes
 
 ## Guidelines for Splitting Commits
 
@@ -130,32 +115,38 @@ When analyzing the diff, consider splitting commits based on these criteria:
 ## Examples
 
 Good commit messages:
-- ✨ feat: add user authentication system
-- 🐛 fix: resolve memory leak in rendering process
-- 📝 docs: update API documentation with new endpoints
-- ♻️ refactor: simplify error handling logic in parser
-- 🚨 fix: resolve linter warnings in component files
-- 🧑‍💻 chore: improve developer tooling setup process
-- 👔 feat: implement business logic for transaction validation
-- 🩹 fix: address minor styling inconsistency in header
-- 🚑️ fix: patch critical security vulnerability in auth flow
-- 🎨 style: reorganize component structure for better readability
-- 🔥 fix: remove deprecated legacy code
-- 🦺 feat: add input validation for user registration form
-- 💚 fix: resolve failing CI pipeline tests
-- 📈 feat: implement analytics tracking for user engagement
-- 🔒️ fix: strengthen authentication password requirements
-- ♿️ feat: improve form accessibility for screen readers
+- ✨ feat(auth): add user authentication system
+- 🐛 fix(memory): resolve memory leak in rendering process
+- 📝 docs(api): update API documentation with new endpoints
+- ♻️ refactor(parser): simplify error handling logic in parser
+- 🚨 fix(lint): resolve linter warnings in component files
+- 🧑 chore(tooling): improve developer tooling setup process
+- 🩹 fix(ui): address minor styling inconsistency in header
+- 🚑️ fix(auth): patch critical security vulnerability in auth flow
+- 🎨 style(components): reorganize component structure for better readability
+- 🔥 fix(core): remove deprecated legacy code
+- 🦺 feat(auth): add input validation for user registration form
+- 💚 fix(ci): resolve failing CI pipeline tests
+- 📈 feat(analytics): implement tracking for user engagement
+- 🔒️ fix(auth): strengthen authentication password requirements
+- ♿️ feat(forms): improve accessibility for screen readers
+- 🎨 style(components): reorganize component structure for better readability
+- 🔥 fix(core): remove deprecated legacy code
+- 🦺 feat(auth): add input validation for user registration form
+- 💚 fix(ci): resolve failing CI pipeline tests
+- 📈 feat(analytics): implement tracking for user engagement
+- 🔒️ fix(auth): strengthen authentication password requirements
+- ♿️ feat(forms): improve accessibility for screen readers
 
 Example of splitting commits:
-- First commit: ✨ feat: add new solc version type definitions
-- Second commit: 📝 docs: update documentation for new solc versions
-- Third commit: 🔧 chore: update package.json dependencies
-- Fourth commit: 🏷️ feat: add type definitions for new API endpoints
-- Fifth commit: 🧵 feat: improve concurrency handling in worker threads
-- Sixth commit: 🚨 fix: resolve linting issues in new code
-- Seventh commit: ✅ test: add unit tests for new solc version features
-- Eighth commit: 🔒️ fix: update dependencies with security vulnerabilities
+- First commit: ✨ feat(solc): add new solc version type definitions
+- Second commit: 📝 docs(solc): update documentation for new solc versions
+- Third commit: 🔧 chore(deps): update package.json dependencies
+- Fourth commit: 🏷️ feat(api): add type definitions for new API endpoints
+- Fifth commit: 🧵 feat(worker): improve concurrency handling in worker threads
+- Sixth commit: 🚨 fix(lint): resolve linting issues in new code
+- Seventh commit: ✅ test(solc): add unit tests for new solc version features
+- Eighth commit: 🔒️ fix(deps): update dependencies with security vulnerabilities
 
 ## Command Options
 
@@ -163,9 +154,9 @@ Example of splitting commits:
 
 ## Important Notes
 
-- By default, pre-commit checks (`npm run lint`, `npm run build`, `npm run test`, `npm run typecheck`) will run to ensure code quality
-- If these checks fail, you'll be asked if you want to proceed with the commit anyway or fix the issues first
-- If specific files are already staged, the command will only commit those files
+- By default, pre-commit checks (`npm run lint`, `npm run build`, `npm run test`, `npm run typecheck`, `npm run format:check`) will run to ensure code quality
+- If format check fails, run `npm run format` to fix. If other checks fail, ALWAYS ask the user if they want to proceed with the commit anyway or fix the issues first
+- If specific files are already staged, the command will only commit those files; DO NOT stage any untracked files
 - If no files are staged, it will automatically stage all modified and new files
 - The commit message will be constructed based on the changes detected
 - Before committing, the command will review the diff to identify if multiple commits would be more appropriate

@@ -103,10 +103,9 @@ const data = JSON.parse(response.output_text);
 curl https://api.openai.com/v1/responses   -H "Authorization: Bearer $OPENAI_API_KEY"   -H "Content-Type: application/json"   -d '{
     "model": "gpt-5",
     "input": "Extract title and authors from this citation: Rumelhart, Hinton, Williams (1986).",
-    "response_format": {
-      "type": "json_schema",
-      "json_schema": {
-        "name": "Citation",
+    "text": {
+      "format": {
+        "type": "json_schema",
         "schema": {
           "type": "object",
           "additionalProperties": false,
@@ -116,7 +115,8 @@ curl https://api.openai.com/v1/responses   -H "Authorization: Bearer $OPENAI_API
           },
           "required": ["title", "authors"]
         },
-        "strict": true
+        "strict": true,
+        "name": "Citation"
       }
     }
   }'
@@ -317,10 +317,9 @@ const client = new OpenAI();
 const stream = await client.responses.stream({
   model: "gpt-5-mini",
   input: "Give 3 snack ideas as JSON with fields: name, calories.",
-  response_format: {
-    type: "json_schema",
-    json_schema: {
-      name: "Snacks",
+  text: {
+    format: {
+      type: "json_schema",
       schema: {
         type: "object",
         properties: {
@@ -328,7 +327,8 @@ const stream = await client.responses.stream({
             name: { type: "string" }, calories: { type: "number" }
           }, required: ["name","calories"], additionalProperties: false } }
         },
-        required: ["items"], additionalProperties: false
+        required: ["items"],
+        additionalProperties: false
       },
       strict: true
     }
@@ -393,6 +393,6 @@ print(resp.output_text)
 - Responses API
   - https://platform.openai.com/docs/api-reference/responses/create
 - Structured outputs
-  - https://platform.openai.com/docs/guides/structured-output/overview
+  - https://platform.openai.com/docs/guides/structured-outputs
 - Realtime API
   - https://platform.openai.com/docs/api-reference/realtime
