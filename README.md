@@ -17,6 +17,9 @@ This workspace provides a collection of custom commands and agents designed to e
 - **clean-branches** - Remove stale local and remote branches
 - **commit** - Enhanced commit command with comprehensive checks
 
+### GitHub Integration Commands
+- **add-gh-workflows** - Set up comprehensive GitHub workflows for CI/CD automation
+
 ### Project Setup Commands
 - **init-project** - Initialize new projects with standardized structure
 - **setup-design-system** - Create comprehensive Tailwind CSS design systems
@@ -31,6 +34,15 @@ This workspace provides a collection of custom commands and agents designed to e
 - **update-changelog** - Generate and maintain changelog entries
 
 ## Recent Updates
+
+### v0.4.0 - 2025-08-28
+- ✨ Added GitHub workflows command for automated CI/CD setup
+- ✨ Comprehensive GitHub workflow templates including:
+  - CI/CD pipeline with Node.js testing and build
+  - Dependabot configuration with auto-merge capabilities  
+  - Claude Code integration workflows for automated PR reviews
+  - Claude assistant workflow for interactive GitHub support
+- 📝 Updated commands instructions and tool permissions
 
 ### v0.3.0 - 2025-08-25
 - ✨ Added OpenAI agent with comprehensive API playbook for modern OpenAI development
@@ -61,6 +73,7 @@ Commands are available via Claude Code's slash command interface:
 ```
 /create-worktree feature-branch-name
 /setup-design-system
+/add-gh-workflows
 /update-readme
 /commit
 ```
@@ -76,6 +89,8 @@ Agents can be invoked through Claude Code's agent system when working on relevan
 .claude/
 ├── commands/          # Custom Claude Code commands
 ├── agents/           # Specialized AI agents
+├── github/           # GitHub workflow templates
+│   └── workflows/    # CI/CD, Dependabot, and Claude integration workflows
 ├── CHANGELOG.md      # Project changelog
 └── README.md         # This file
 ```
@@ -84,6 +99,7 @@ Agents can be invoked through Claude Code's agent system when working on relevan
 
 - **MCP Server Integration** - Automated installation and configuration
 - **Git Workflow Automation** - Streamlined branching and merging
+- **GitHub CI/CD Integration** - Automated workflow setup with comprehensive templates
 - **Design System Generation** - One-command design system setup
 - **Supabase Deployment** - Automated edge function deployment with CLI setup
 - **Documentation Maintenance** - Automated README and changelog updates

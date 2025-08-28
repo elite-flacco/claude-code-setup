@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.0] - 2025-08-28
+
+### Added
+- GitHub workflows command for automated CI/CD setup
+- Comprehensive GitHub workflow templates including:
+  - CI/CD pipeline with Node.js testing and build
+  - Dependabot configuration with auto-merge capabilities
+  - Claude Code integration workflows for automated PR reviews
+  - Claude assistant workflow for interactive GitHub support
+
+### Changed
+- Updated commands instructions
+- Updated allowed tools in default settings
+
 ## [0.3.0] - 2025-08-25
 
 ### Added
