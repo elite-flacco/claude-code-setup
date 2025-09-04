@@ -19,6 +19,7 @@
       "Bash(git checkout:*)",
       "Bash(git add:*)",
       "Bash(git log:*)",
+      "Bash(py:*)",
       "WebSearch",
       "mcp__playwright__browser_navigate",
       "mcp__playwright__browser_snapshot",

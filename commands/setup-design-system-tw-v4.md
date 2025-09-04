@@ -226,10 +226,10 @@ module.exports = {
     @apply scroll-m-20 text-base font-medium;
   }
   p {
-    @apply leading-7;
-  }
-  small {
     @apply text-sm text-muted-foreground;
+  }
+  span {
+    @apply text-xs text-muted-foreground;
   }
   a {
     @apply underline-offset-4 transition-colors duration-150 hover:underline hover:text-primary;
@@ -260,33 +260,33 @@ module.exports = {
            disabled:opacity-50 disabled:cursor-not-allowed;
   }
   .btn-primary {
-    @apply bg-primary text-primary-foreground hover:bg-primary/90 active:bg-primary/85;
+    @apply btn bg-primary text-primary-foreground hover:bg-primary/90 active:bg-primary/85;
   }
   .btn-secondary {
-    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 active:bg-secondary/85;
+    @apply btn bg-secondary text-secondary-foreground hover:bg-secondary/90 active:bg-secondary/85;
   }
   .btn-accent {
-    @apply bg-accent text-accent-foreground hover:bg-accent/90 active:bg-accent/85;
+    @apply btn bg-accent text-accent-foreground hover:bg-accent/90 active:bg-accent/85;
   }
   .btn-destructive {
-    @apply bg-destructive text-destructive-foreground hover:bg-destructive/90 active:bg-destructive/85;
+    @apply btn bg-destructive text-destructive-foreground hover:bg-destructive/90 active:bg-destructive/85;
   }
   .btn-ghost {
-    @apply bg-transparent text-foreground hover:bg-muted/70 active:bg-muted;
+    @apply btn bg-transparent text-foreground hover:bg-muted/70 active:bg-muted;
   }
   .btn-outline {
-    @apply border border-border bg-transparent text-foreground hover:bg-muted active:bg-muted;
+    @apply btn border border-border bg-transparent text-foreground hover:bg-muted active:bg-muted;
   }
   .btn-sm {
-    @apply h-8 px-3 text-xs;
+    @apply btn h-8 px-3 text-xs;
   }
   .btn-lg {
-    @apply h-11 px-6 text-base;
+    @apply btn h-11 px-6 text-base;
   }
 
   /* Card */
   .card {
-    @apply bg-background text-foreground border border-border rounded-lg shadow;
+    @apply p-4 bg-background text-foreground border border-border rounded-lg shadow-md;
   }
   .card-header {
     @apply p-4 border-b border-border;
@@ -310,7 +310,7 @@ module.exports = {
   .select {
     @apply w-full rounded-md border border-input bg-background text-foreground
            px-3 py-2 text-sm shadow-sm transition-colors
-           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring
+           focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-ring
            placeholder:text-muted-foreground;
   }
   .input:hover,

@@ -23,7 +23,7 @@ Or with options:
 
 1. Unless specified with `--no-verify`, automatically runs pre-commit checks:
    - `npm run lint` to ensure code quality
-   - `npm run build` to verify the build succeeds (remove build cache first)
+   - `npm run build` to verify the build succeeds (remove build cache first, e.g. `rm -rf .next` for Next.js project)
    - `npm run test` to verify the tests succeed
    - `npm run typecheck` to verify the types succeed
    - `npm run format:check` to check for code style issues
