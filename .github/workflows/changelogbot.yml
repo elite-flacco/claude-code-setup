@@ -20,6 +20,11 @@ jobs:
           git config --global user.email "claude[bot]@users.noreply.github.com"
           git config --global user.name "claude[bot]"
 
+      - name: Copy custom commands
+        run: |
+          mkdir -p .claude/commands
+          cp commands/update-changelog.md .claude/commands/
+
       - name: Update changelog
         uses: anthropics/claude-code-action@v1
         with:
@@ -40,6 +45,11 @@ jobs:
         run: |
           git config --global user.email "claude[bot]@users.noreply.github.com"
           git config --global user.name "claude[bot]"
+
+      - name: Copy custom commands
+        run: |
+          mkdir -p .claude/commands
+          cp commands/update-readme.md .claude/commands/
 
       - name: Update readme
         uses: anthropics/claude-code-action@v1
