@@ -2,6 +2,7 @@ name: Weekly Changelog Updates
 on:
   schedule:
     - cron: "0 9 * * 0"
+  workflow_dispatch:
 jobs:
   update-changelog:
     runs-on: ubuntu-latest
