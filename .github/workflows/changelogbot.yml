@@ -6,6 +6,10 @@ on:
 jobs:
   update-changelog:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+      pull-requests: write
     steps:
       - uses: anthropics/claude-code-action@v1
         with:
@@ -14,6 +18,10 @@ jobs:
 
   update-readme:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+      pull-requests: write
     steps:
       - uses: anthropics/claude-code-action@v1
         with:
