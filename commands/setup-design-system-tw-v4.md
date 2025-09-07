@@ -208,25 +208,25 @@ module.exports = {
     @apply bg-background text-foreground font-sans antialiased;
   }
   h1 {
-    @apply scroll-m-20 text-4xl font-bold tracking-tight;
+    @apply scroll-m-20 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight;
   }
   h2 {
-    @apply scroll-m-20 text-3xl font-semibold tracking-tight;
+    @apply scroll-m-20 text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight leading-snug;
   }
   h3 {
-    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+    @apply scroll-m-20 text-xl sm:text-2xl md:text-3xl font-semibold leading-snug;
   }
   h4 {
-    @apply scroll-m-20 text-xl font-medium;
+    @apply scroll-m-20 text-lg sm:text-xl md:text-2xl font-medium leading-snug;
   }
   h5 {
-    @apply scroll-m-20 text-lg font-medium;
+    @apply scroll-m-20 text-base sm:text-lg font-medium leading-normal;
   }
   h6 {
-    @apply scroll-m-20 text-base font-medium;
+    @apply scroll-m-20 text-sm sm:text-base font-medium leading-normal;
   }
   p {
-    @apply text-sm text-muted-foreground;
+    @apply text-xs sm:text-sm md:text-base leading-relaxed text-muted-foreground;
   }
   span {
     @apply text-xs text-muted-foreground;
