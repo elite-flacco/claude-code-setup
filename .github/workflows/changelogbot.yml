@@ -1,0 +1,20 @@
+name: Weekly Changelog Updates
+on:
+  schedule:
+    - cron: "0 9 * * 0"
+jobs:
+  update-changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: "/update-changelog"
+
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: "/update-readme"
