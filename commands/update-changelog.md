@@ -1,6 +1,6 @@
 # Update Changelog Command
 
-Generate and maintain project changelog
+Generate and maintain project changelog.
 
 ## Usage
 
@@ -12,11 +12,18 @@ To update changelog, just type:
 Or with options:
 ```
 /update-changelog --no-version
+/update-changelog --create-pr
 ```
 
 ## Instructions
 
-Setup and maintain changelog following the instructions below. When `--no-version` is specified, do not add a version entry to the changelog, otherwise add a version entry to the changelog using today's date.
+Setup and maintain changelog following the instructions below. If the changelog does not exist, create it. If it exists, update it including all notable changes since the changelog was last updated.
+
+Run `npm run format` to format the changelog after updating it.
+
+When `--no-version` is specified, do not add a version entry to the changelog, otherwise add a version entry to the changelog using today's date.
+
+When `--create-pr` is specified, create a pull request with the changelog changes.
 
 1. **Changelog Format (Keep a Changelog)**
    ```markdown

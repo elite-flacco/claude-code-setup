@@ -20,16 +20,11 @@ jobs:
           git config --global user.email "claude[bot]@users.noreply.github.com"
           git config --global user.name "claude[bot]"
 
-      - name: Copy custom commands
-        run: |
-          mkdir -p .claude/commands
-          cp commands/update-changelog.md .claude/commands/
-
       - name: Update changelog
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          prompt: "/update-changelog"
+          prompt: "/update-changelog --create-pr"
           claude_args: "--allowedTools 'Edit,MultiEdit,Write,Read,Glob,Grep,LS,Bash(git:*),Bash(gh:*),Bash(npm:*),Bash(npx:*)'"
 
   update-readme:
@@ -47,14 +42,9 @@ jobs:
           git config --global user.email "claude[bot]@users.noreply.github.com"
           git config --global user.name "claude[bot]"
 
-      - name: Copy custom commands
-        run: |
-          mkdir -p .claude/commands
-          cp commands/update-readme.md .claude/commands/
-
       - name: Update readme
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          prompt: "/update-readme"
+          prompt: "/update-readme --create-pr"
           claude_args: "--allowedTools 'Edit,MultiEdit,Write,Read,Glob,Grep,LS,Bash(git:*),Bash(gh:*),Bash(npm:*),Bash(npx:*)'"
