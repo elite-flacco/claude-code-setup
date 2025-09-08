@@ -35,6 +35,12 @@ This workspace provides a collection of custom commands and agents designed to e
 
 ## Recent Updates
 
+### v0.5.0 - 2025-09-08
+- 🚀 Enhanced changelogbot workflow with automated PR creation
+- ✨ Added `--create-pr` flag to update-changelog and update-readme commands
+- 🤖 Weekly automated pull request creation for documentation updates
+- 📝 Improved workflow automation for maintenance tasks
+
 ### v0.4.0 - 2025-08-28
 - ✨ Added GitHub workflows command for automated CI/CD setup
 - ✨ Comprehensive GitHub workflow templates including:
@@ -102,7 +108,8 @@ Agents can be invoked through Claude Code's agent system when working on relevan
 - **GitHub CI/CD Integration** - Automated workflow setup with comprehensive templates
 - **Design System Generation** - One-command design system setup
 - **Supabase Deployment** - Automated edge function deployment with CLI setup
-- **Documentation Maintenance** - Automated README and changelog updates
+- **Documentation Maintenance** - Automated README and changelog updates with PR creation
+- **Weekly Automated Updates** - Scheduled documentation updates via GitHub Actions
 
 ## Getting Started
 
