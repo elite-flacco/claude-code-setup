@@ -35,6 +35,9 @@ This workspace provides a collection of custom commands and agents designed to e
 
 ## Recent Updates
 
+### v0.5.0 - 2025-09-07
+- 🚀 Added GitHub workflow automation with weekly changelog and README updates
+
 ### v0.4.0 - 2025-08-28
 - ✨ Added GitHub workflows command for automated CI/CD setup
 - ✨ Comprehensive GitHub workflow templates including:
@@ -100,9 +103,9 @@ Agents can be invoked through Claude Code's agent system when working on relevan
 - **MCP Server Integration** - Automated installation and configuration
 - **Git Workflow Automation** - Streamlined branching and merging
 - **GitHub CI/CD Integration** - Automated workflow setup with comprehensive templates
+- **Weekly Automation** - Scheduled weekly changelog and README updates via GitHub Actions
 - **Design System Generation** - One-command design system setup
 - **Supabase Deployment** - Automated edge function deployment with CLI setup
-- **Documentation Maintenance** - Automated README and changelog updates
 
 ## Getting Started
 
