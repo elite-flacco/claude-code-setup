@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.1] - 2025-09-21
+
+### Changed
+- Reorganized README features around commands, agents, hooks, and GitHub integration
+- Enhanced documentation structure with clear categorization and feature counts
+- Improved hooks section with comprehensive TypeScript script documentation
+- Updated GitHub Integration & Workflows section with detailed CI/CD categories
+- Enhanced automation features organization and usage explanations
+
 ## [0.5.0] - 2025-09-08
 
 ### Added
