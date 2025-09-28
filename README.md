@@ -1,165 +1,82 @@
-# Claude Code Workspace
+# Claude Code Setup
 
-A comprehensive Claude Code workspace configuration with custom commands, specialized agents, hooks, and GitHub integration for enhanced development workflows.
+A minimal Claude Code workspace configuration with basic setup and automation commands.
 
 ## Overview
 
-This workspace provides a collection of custom commands, specialized agents, and GitHub integrations designed to streamline development workflows with Claude Code. It includes tools for git automation, design system setup, project initialization, and CI/CD workflows.
+This workspace provides a foundational setup for Claude Code with essential configuration files and a command for maintaining project documentation.
 
 ## Features
 
-### 📁 Commands (15 available)
+### 📁 Commands (1 available)
 
-#### Git Workflow Commands
-- **create-worktree** - Create git worktrees for parallel feature development
-- **remove-worktree** - Clean up git worktrees when branches are done
-- **create-worktrees-for-pr** - Set up worktrees specifically for pull request workflows
-- **create-pr** - Automated pull request creation with proper formatting
-- **merge-branch** - Streamlined branch merging with cleanup
-- **clean-branches** - Remove stale local and remote branches
-- **commit** - Enhanced commit command with comprehensive checks
+- **update-readme** - Automatically update README files based on recent changes and create pull requests
 
-#### Project Setup Commands
-- **init-project** - Initialize new projects with standardized structure
-- **setup-design-system** - Create comprehensive Tailwind CSS design systems
-- **setup-design-system-tw-v4** - Tailwind CSS v4 specific design system setup
-- **design-mode** - Switch projects into design/prototyping mode
+### ⚡ Hooks (3 configured)
 
-#### Deployment Commands
-- **deploy-supabase-edge-function** - Deploy edge functions to Supabase with automated setup
+This workspace includes hooks configuration that references external TypeScript scripts for:
+- **Notification** - Handles agent notification events
+- **Stop** - Processes agent completion events
+- **SubagentStop** - Manages subagent completion notifications
 
-#### GitHub Integration Commands
-- **add-gh-workflows** - Set up comprehensive GitHub workflows for CI/CD automation
-
-#### Maintenance Commands
-- **update-readme** - Automatically update README files based on recent changes
-- **update-changelog** - Generate and maintain changelog entries
-
-### 🤖 Agents (1 available)
-
-- **openai** - Comprehensive OpenAI API implementation guidance covering Responses API, structured outputs, tool use, streaming, and realtime features
-
-### ⚡ Hooks (3 available)
-
-- **notification.ts** - Logs notifications and plays sound/speech alerts when agents need attention
-- **stop.ts** - Handles agent completion events with sound notifications and chat transcript processing
-- **subagent_stop.ts** - Manages subagent completion notifications with cross-platform sound support
-
-### 🔗 GitHub Integration & Workflows (5 workflows)
-
-#### CI/CD Workflows
-- **ci.yml** - Continuous integration with Node.js testing and build automation
-- **auto-merge-dependabot.yml** - Automated dependency updates with auto-merge capabilities
-
-#### Claude Code Integration Workflows  
-- **cc-assistant.yml** - Interactive GitHub support with Claude Code integration
-- **cc-auto-review.yml** - Automated pull request reviews using Claude Code
-- **changelogbot.yml** - Automated changelog and README updates on schedule
+*Note: Hook scripts are configured to run from external locations and are not included in this repository.*
 
 ## Recent Updates
 
-### v0.5.0 - 2025-09-07
-- 🚀 Added GitHub workflow automation with weekly changelog and README updates
+### v1.0.0 - 2025-09-28
+- 📝 Updated README to accurately reflect current workspace state
+- 🔧 Corrected feature descriptions to match actual available components
 
-### v0.4.0 - 2025-08-28
-- ✨ Added GitHub workflows command for automated CI/CD setup
-- ✨ Comprehensive GitHub workflow templates including:
-  - CI/CD pipeline with Node.js testing and build
-  - Dependabot configuration with auto-merge capabilities  
-  - Claude Code integration workflows for automated PR reviews
-  - Claude assistant workflow for interactive GitHub support
-- 📝 Updated commands instructions and tool permissions
-
-### v0.3.0 - 2025-08-25
-- ✨ Added OpenAI agent with comprehensive API playbook for modern OpenAI development
-- ✨ Added Supabase edge function deployment command with automated CLI setup
-- 📝 Enhanced project documentation and changelog maintenance
-
-### v0.2.0 - 2025-08-23
-- ✨ Added git worktree command definitions with proper tool permissions
-- 📝 Enhanced commit command documentation with comprehensive checks
-- ✨ Comprehensive design system setup commands for modern web development
-
-### v0.1.0 - 2025-08-08
-- 🔧 MCP server installation automation (playwright, context7)
-- 🎉 Initial Claude Code workspace setup with project structure
-
-## Design System
-
-The workspace includes a sophisticated design system setup that provides:
-- **Tailwind CSS integration** with CSS variables as the single source of truth
-- **Dark mode support** via class-based switching
-- **Comprehensive component library** (buttons, cards, forms, badges)
-- **Accessibility-first approach** with reduced motion respect
-- **Scalable token system** for colors, typography, and spacing
+### Previous Versions
+- 🚀 Initial setup with comprehensive workspace descriptions
+- 🎉 Basic Claude Code configuration established
 
 ## Usage
 
 ### Commands
 Available via Claude Code's slash command interface:
 ```
-/create-worktree feature-branch-name
-/setup-design-system
-/add-gh-workflows
-/update-readme
-/commit
+/update-readme [--create-pr]
 ```
 
-### Agents
-Automatically invoked by Claude Code when working on relevant tasks or can be explicitly requested for specialized assistance.
+The `update-readme` command will analyze recent changes and update this README file accordingly. When used with the `--create-pr` flag, it will also create a pull request with the changes.
 
 ### Hooks
-Event-driven TypeScript scripts that automatically execute on Claude Code events:
-- Provide audio/visual notifications for agent states
-- Log agent activities for monitoring and debugging  
-- Cross-platform sound support (macOS, Windows, Linux)
+This workspace includes hooks configuration in `settings.json` that handle:
+- **Notification events** - External script for agent notifications
+- **Stop events** - External script for agent completion processing
+- **Subagent stop events** - External script for subagent completion handling
 
-### GitHub Workflows
-Automatically deployed when using `/add-gh-workflows` command. Includes comprehensive CI/CD automation and Claude Code integration.
+*Note: The actual hook scripts are referenced from external locations and execute automatically based on Claude Code events.*
 
 ## File Structure
 
 ```
-.claude/
-├── commands/          # Custom Claude Code commands (15 available)
-├── agents/           # Specialized AI agents (4 available)
-├── hooks/            # Event-driven TypeScript scripts (3 available)
-├── github/           # GitHub workflow templates
-│   └── workflows/    # CI/CD, Dependabot, and Claude integration workflows (5 available)
-├── scripts/          # Utility scripts
-├── settings.json     # Claude Code workspace settings
-├── CHANGELOG.md      # Project changelog
-└── README.md         # This file
+├── .claude/
+│   └── commands/
+│       └── update-readme.md    # README maintenance command
+├── settings.json               # Claude Code workspace settings with hooks configuration
+└── README.md                   # This file
 ```
 
-## Automation Features
+## Configuration
 
-### Command Automation
-- **MCP Server Integration** - Automated installation and configuration of MCP servers
-- **Git Workflow Automation** - Streamlined branching, merging, and cleanup via commands
-- **Design System Generation** - One-command Tailwind CSS design system setup
-- **Project Initialization** - Automated project structure creation
-- **Supabase Deployment** - Automated edge function deployment with CLI setup
+### Permissions
+The workspace includes pre-configured permissions for:
+- **Development commands** - npm scripts for dev, build, lint, test, typecheck, format
+- **Git operations** - Basic git commands (checkout, add, log) with reset protection
+- **MCP Playwright integration** - Browser automation capabilities
+- **Environment protection** - Prevents reading/writing sensitive .env files
 
-### Agent Automation  
-- **Context-Aware Assistance** - Specialized agents automatically invoked based on task context
-- **API Implementation** - OpenAI integration best practices and code generation
-
-### GitHub Integration Automation
-- **CI/CD Pipeline Setup** - One-command comprehensive GitHub workflow deployment
-- **Weekly Maintenance** - Scheduled changelog and README updates via GitHub Actions
-- **Dependency Management** - Automated Dependabot updates with auto-merge
-- **Code Review Automation** - Claude Code integration for automated PR reviews
-
-### Hook Automation
-- **Event-Driven Notifications** - Automatic audio/visual alerts for agent state changes
-- **Activity Logging** - Comprehensive logging of agent interactions and completions
-- **Cross-Platform Sound Support** - Notification sounds for macOS, Windows, and Linux
-- **Chat Transcript Processing** - Automatic processing and storage of conversation transcripts
+### Hooks Configuration
+Hooks are configured to run external TypeScript scripts that provide:
+- Audio/visual notifications for Claude Code events
+- Chat transcript processing and logging
+- Cross-platform compatibility
 
 ## Getting Started
 
-1. This workspace is automatically configured for Claude Code
-2. Use `/help` to see available commands
-3. Commands include built-in tool permissions and safety checks
-4. Agents are invoked automatically based on task context
+1. This workspace is ready to use with Claude Code
+2. Use `/update-readme` to maintain documentation
+3. Hooks will automatically handle notifications and event processing
+4. The configuration includes safety measures to protect sensitive files
