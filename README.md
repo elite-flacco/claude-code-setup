@@ -120,9 +120,9 @@ Automatically deployed when using `/add-gh-workflows` command. Includes comprehe
 ## File Structure
 
 ```
-.claude/
+.
 ├── commands/          # Custom Claude Code commands (15 available)
-├── agents/           # Specialized AI agents (4 available)
+├── agents/           # Specialized AI agents (1 available)
 ├── hooks/            # Event-driven TypeScript scripts (3 available)
 ├── github/           # GitHub workflow templates
 │   └── workflows/    # CI/CD, Dependabot, and Claude integration workflows (5 available)
