@@ -45,7 +45,7 @@ This workspace provides a collection of custom commands, specialized agents, and
 - **stop.ts** - Handles agent completion events with sound notifications and chat transcript processing
 - **subagent_stop.ts** - Manages subagent completion notifications with cross-platform sound support
 
-### 🔗 GitHub Integration & Workflows (6 workflows)
+### 🔗 GitHub Integration & Workflows (5 workflows)
 
 #### CI/CD Workflows
 - **ci.yml** - Continuous integration with Node.js testing and build automation
@@ -125,7 +125,7 @@ Automatically deployed when using `/add-gh-workflows` command. Includes comprehe
 ├── agents/           # Specialized AI agents (1 available)
 ├── hooks/            # Event-driven TypeScript scripts (3 available)
 ├── github/           # GitHub workflow templates
-│   └── workflows/    # CI/CD, Dependabot, and Claude integration workflows (6 available)
+│   └── workflows/    # CI/CD, Dependabot, and Claude integration workflows (5 available)
 ├── scripts/          # Utility scripts
 ├── settings.json     # Claude Code workspace settings
 ├── CHANGELOG.md      # Project changelog
