@@ -1,6 +1,11 @@
 ---
-allowed-tools: Bash(git worktree:*)
+allowed-tools: Bash(git worktree:*), Bash(cp:*)
 description: Create a git worktree
 ---
 
-This command creates a new git branch $ARGUMENTS and sets up a worktree for it in the `./worktrees/<BRANCHNAME>` directory.
+# Create git worktree
+
+## Instructions
+1. Create a new git branch $ARGUMENTS
+2. Create a new worktree for it in the `./worktrees/<BRANCHNAME>` directory.
+3. Copy env files if they exist

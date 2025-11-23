@@ -260,28 +260,28 @@ module.exports = {
            disabled:opacity-50 disabled:cursor-not-allowed;
   }
   .btn-primary {
-    @apply btn bg-primary text-primary-foreground hover:bg-primary/90 active:bg-primary/85;
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 active:bg-primary/85;
   }
   .btn-secondary {
-    @apply btn bg-secondary text-secondary-foreground hover:bg-secondary/90 active:bg-secondary/85;
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 active:bg-secondary/85;
   }
   .btn-accent {
-    @apply btn bg-accent text-accent-foreground hover:bg-accent/90 active:bg-accent/85;
+    @apply bg-accent text-accent-foreground hover:bg-accent/90 active:bg-accent/85;
   }
   .btn-destructive {
-    @apply btn bg-destructive text-destructive-foreground hover:bg-destructive/90 active:bg-destructive/85;
+    @apply bg-destructive text-destructive-foreground hover:bg-destructive/90 active:bg-destructive/85;
   }
   .btn-ghost {
-    @apply btn bg-transparent text-foreground hover:bg-muted/70 active:bg-muted;
+    @apply bg-transparent text-foreground hover:bg-muted/70 active:bg-muted;
   }
   .btn-outline {
-    @apply btn border border-border bg-transparent text-foreground hover:bg-muted active:bg-muted;
+    @apply border border-border bg-transparent text-foreground hover:bg-muted active:bg-muted;
   }
   .btn-sm {
-    @apply btn h-8 px-3 text-xs;
+    @apply h-8 px-3 text-xs;
   }
   .btn-lg {
-    @apply btn h-11 px-6 text-base;
+    @apply h-11 px-6 text-base;
   }
 
   /* Card */
