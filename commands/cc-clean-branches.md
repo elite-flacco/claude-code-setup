@@ -1,4 +1,4 @@
-# Clean Branches Command
+# Clean Branches
 
 Clean up merged and stale git branches
 

@@ -98,11 +98,11 @@ The workspace includes a sophisticated design system setup that provides:
 ### Commands
 Available via Claude Code's slash command interface:
 ```
-/create-worktree feature-branch-name
-/setup-design-system
-/add-gh-workflows
-/update-readme
-/commit
+/cc-create-worktree feature-branch-name
+/cc-setup-design-system
+/cc-add-gh-workflows
+/cc-update-readme
+/cc-commit
 ```
 
 ### Agents
@@ -115,7 +115,7 @@ Event-driven TypeScript scripts that automatically execute on Claude Code events
 - Cross-platform sound support (macOS, Windows, Linux)
 
 ### GitHub Workflows
-Automatically deployed when using `/add-gh-workflows` command. Includes comprehensive CI/CD automation and Claude Code integration.
+Automatically deployed when using `/cc-add-gh-workflows` command. Includes comprehensive CI/CD automation and Claude Code integration.
 
 ## File Structure
 

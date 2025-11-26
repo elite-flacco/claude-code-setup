@@ -3,6 +3,6 @@ allowed-tools: Bash(git checkout:*), Bash(git add:*), Bash(git status:*), Bash(g
 description: Create a github pull request
 ---
 
-# Create Pull Request Command
+# Create Pull Request
 
 Assume you are already on a branch and changes have been committed. Push the branch to remote and Creates pull request with proper summary and test plan.

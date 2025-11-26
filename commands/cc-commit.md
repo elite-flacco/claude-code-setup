@@ -3,7 +3,7 @@ allowed-tools: Bash(git commit:*), Bash(git push:*)
 description: Create a commit
 ---
 
-# Claude Command: Commit
+# Commit Changes
 
 This command helps you create well-formatted commits with conventional commit messages and emoji.
 
@@ -11,12 +11,12 @@ This command helps you create well-formatted commits with conventional commit me
 
 To create a commit, just type:
 ```
-/commit
+/cc-commit
 ```
 
 Or with options:
 ```
-/commit --no-verify
+/cc-commit --no-verify
 ```
 
 ## Instructions

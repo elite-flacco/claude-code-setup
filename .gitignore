@@ -5,5 +5,8 @@
 /todos
 /projects
 /backups
+/debug
+/file-history
 .credentials.json
 settings.json.backup
+history.jsonl

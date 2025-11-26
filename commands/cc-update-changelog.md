@@ -6,13 +6,13 @@ Generate and maintain project changelog.
 
 To update changelog, just type:
 ```
-/update-changelog
+/cc-update-changelog
 ```
 
 Or with options:
 ```
-/update-changelog --no-version
-/update-changelog --create-pr
+/cc-update-changelog --no-version
+/cc-update-changelog --create-pr
 ```
 
 ## Instructions

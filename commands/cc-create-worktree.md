@@ -3,7 +3,7 @@ allowed-tools: Bash(git worktree:*), Bash(cp:*)
 description: Create a git worktree
 ---
 
-# Create git worktree
+# Create Git Worktree
 
 ## Instructions
 1. Create a new git branch $ARGUMENTS

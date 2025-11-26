@@ -3,7 +3,7 @@ allowed-tools: Bash(supabase:*), Bash(npx supabase:*)
 description: Deploy edge function to Supabase
 ---
 
-# Deploy edge function $ARGUMENTS to Supabase
+# Deploy Edge Function $ARGUMENTS to Supabase
 
 ## Instructions
 
