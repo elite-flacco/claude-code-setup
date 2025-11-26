@@ -7,6 +7,7 @@
 /backups
 /debug
 /file-history
+/scripts/.env
 .credentials.json
 settings.json.backup
 history.jsonl
