@@ -23,13 +23,13 @@ jobs:
       - name: Copy custom commands
         run: |
           mkdir -p .claude/commands
-          cp commands/update-changelog.md .claude/commands/
+          cp commands/cc-update-changelog.md .claude/commands/
 
       - name: Update changelog
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          prompt: "/update-changelog --create-pr"
+          prompt: "/cc-update-changelog --create-pr"
           claude_args: "--allowedTools 'Edit,MultiEdit,Write,Read,Glob,Grep,LS,Bash(git:*),Bash(gh:*),Bash(npm:*),Bash(npx:*)'"
 
   update-readme:
@@ -50,11 +50,11 @@ jobs:
       - name: Copy custom commands
         run: |
           mkdir -p .claude/commands
-          cp commands/update-readme.md .claude/commands/
+          cp commands/cc-update-readme.md .claude/commands/
 
       - name: Update readme
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          prompt: "/update-readme --create-pr"
+          prompt: "/cc-update-readme --create-pr"
           claude_args: "--allowedTools 'Edit,MultiEdit,Write,Read,Glob,Grep,LS,Bash(git:*),Bash(gh:*),Bash(npm:*),Bash(npx:*)'"
