@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(git commit:*), Bash(git push:*)
+allowed-tools: Bash(git commit:*), Bash(git push:*), Bash(npm run format:*), Bash(npm run typecheck:*), Bash(npm run lint:*)
 description: Create a commit
 ---
 
