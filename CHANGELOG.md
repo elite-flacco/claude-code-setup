@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.1] - 2025-12-02
+
+### Changed
+- Enhanced instruction for cc-show-prs and nc-company-research commands
+- Improved instruction for cc-add-scripts and cc-commit commands
+
+## [0.6.0] - 2025-11-26
+
+### Added
+- cc-add-scripts command for automated project setup
+- cc-show-prs command for viewing open pull requests
+- nc-company-research command with Notion integration
+- Environment variable support for MCP server setup
+
+### Changed
+- Refactored all command names with cc- prefix convention
+- Configured status line with PowerShell script
+- Improved worktree command documentation
+- Fixed design system CSS issues
+
+## [0.5.1] - 2025-09-21
+
+### Changed
+- Fixed workflow and agent counts in README documentation
+
 ## [0.5.0] - 2025-09-08
 
 ### Added
