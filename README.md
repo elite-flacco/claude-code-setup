@@ -8,32 +8,39 @@ This workspace provides a collection of custom commands, specialized agents, and
 
 ## Features
 
-### 📁 Commands (15 available)
+### 📁 Commands (18 available)
+
+All commands use the `cc-` prefix for Claude Code commands:
 
 #### Git Workflow Commands
-- **create-worktree** - Create git worktrees for parallel feature development
-- **remove-worktree** - Clean up git worktrees when branches are done
-- **create-worktrees-for-pr** - Set up worktrees specifically for pull request workflows
-- **create-pr** - Automated pull request creation with proper formatting
-- **merge-branch** - Streamlined branch merging with cleanup
-- **clean-branches** - Remove stale local and remote branches
-- **commit** - Enhanced commit command with comprehensive checks
+- **cc-create-worktree** - Create git worktrees for parallel feature development
+- **cc-remove-worktree** - Clean up git worktrees when branches are done
+- **cc-create-worktrees-for-pr** - Set up worktrees specifically for pull request workflows
+- **cc-create-pr** - Automated pull request creation with proper formatting
+- **cc-merge-branch** - Streamlined branch merging with cleanup
+- **cc-clean-branches** - Remove stale local and remote branches
+- **cc-commit** - Enhanced commit command with comprehensive checks
+- **cc-show-prs** - Display and manage pull requests
 
 #### Project Setup Commands
-- **init-project** - Initialize new projects with standardized structure
-- **setup-design-system** - Create comprehensive Tailwind CSS design systems
-- **setup-design-system-tw-v4** - Tailwind CSS v4 specific design system setup
-- **design-mode** - Switch projects into design/prototyping mode
+- **cc-init-project** - Initialize new projects with standardized structure
+- **cc-setup-design-system** - Create comprehensive Tailwind CSS design systems
+- **cc-setup-design-system-tw-v4** - Tailwind CSS v4 specific design system setup
+- **cc-design-mode** - Switch projects into design/prototyping mode
+- **cc-add-scripts** - Add utility scripts to projects
 
 #### Deployment Commands
-- **deploy-supabase-edge-function** - Deploy edge functions to Supabase with automated setup
+- **cc-deploy-supabase-edge-function** - Deploy edge functions to Supabase with automated setup
 
 #### GitHub Integration Commands
-- **add-gh-workflows** - Set up comprehensive GitHub workflows for CI/CD automation
+- **cc-add-gh-workflows** - Set up comprehensive GitHub workflows for CI/CD automation
 
 #### Maintenance Commands
-- **update-readme** - Automatically update README files based on recent changes
-- **update-changelog** - Generate and maintain changelog entries
+- **cc-update-readme** - Automatically update README files based on recent changes
+- **cc-update-changelog** - Generate and maintain changelog entries
+
+#### Research Commands
+- **nc-company-research** - Research and analyze company information
 
 ### 🤖 Agents (1 available)
 
@@ -45,18 +52,23 @@ This workspace provides a collection of custom commands, specialized agents, and
 - **stop.ts** - Handles agent completion events with sound notifications and chat transcript processing
 - **subagent_stop.ts** - Manages subagent completion notifications with cross-platform sound support
 
-### 🔗 GitHub Integration & Workflows (6 workflows)
+### 🔗 GitHub Integration & Workflows (5 workflows)
 
 #### CI/CD Workflows
 - **ci.yml** - Continuous integration with Node.js testing and build automation
 - **auto-merge-dependabot.yml** - Automated dependency updates with auto-merge capabilities
 
-#### Claude Code Integration Workflows  
+#### Claude Code Integration Workflows
 - **cc-assistant.yml** - Interactive GitHub support with Claude Code integration
 - **cc-auto-review.yml** - Automated pull request reviews using Claude Code
-- **changelogbot.yml** - Automated changelog and README updates on schedule
+- **changelogbot.yml** - Automated changelog and README updates on weekly schedule using `cc-` prefixed commands
 
 ## Recent Updates
+
+### v0.6.0 - 2025-12-02
+- ♻️ Standardized command naming with `cc-` prefix for all Claude Code commands
+- 🔧 Updated changelogbot workflow to use new command naming convention (`cc-update-changelog`, `cc-update-readme`)
+- ✨ Added new commands: `cc-show-prs`, `cc-add-scripts`, and `nc-company-research`
 
 ### v0.5.0 - 2025-09-07
 - 🚀 Added GitHub workflow automation with weekly changelog and README updates
@@ -120,16 +132,19 @@ Automatically deployed when using `/cc-add-gh-workflows` command. Includes compr
 ## File Structure
 
 ```
-.claude/
-├── commands/          # Custom Claude Code commands (15 available)
-├── agents/           # Specialized AI agents (1 available)
-├── hooks/            # Event-driven TypeScript scripts (3 available)
-├── github/           # GitHub workflow templates
-│   └── workflows/    # CI/CD, Dependabot, and Claude integration workflows (6 available)
-├── scripts/          # Utility scripts
-├── settings.json     # Claude Code workspace settings
-├── CHANGELOG.md      # Project changelog
-└── README.md         # This file
+.
+├── .claude/
+│   └── commands/        # Active Claude Code command (used by workflows)
+├── commands/            # Custom Claude Code commands (18 available, cc- prefixed)
+├── agents/             # Specialized AI agents (1 available)
+├── hooks/              # Event-driven TypeScript scripts (3 available)
+├── github/             # GitHub workflow templates
+│   ├── workflows/      # CI/CD, Dependabot, and Claude integration workflows (5 available)
+│   └── dependabot.yml  # Dependabot configuration
+├── scripts/            # Utility scripts
+├── settings.json       # Claude Code workspace settings
+├── CHANGELOG.md        # Project changelog
+└── README.md           # This file
 ```
 
 ## Automation Features
@@ -147,9 +162,10 @@ Automatically deployed when using `/cc-add-gh-workflows` command. Includes compr
 
 ### GitHub Integration Automation
 - **CI/CD Pipeline Setup** - One-command comprehensive GitHub workflow deployment
-- **Weekly Maintenance** - Scheduled changelog and README updates via GitHub Actions
+- **Weekly Maintenance** - Scheduled changelog and README updates via GitHub Actions using `cc-` prefixed commands
 - **Dependency Management** - Automated Dependabot updates with auto-merge
 - **Code Review Automation** - Claude Code integration for automated PR reviews
+- **Interactive Support** - Claude assistant workflow for GitHub issue and PR support
 
 ### Hook Automation
 - **Event-Driven Notifications** - Automatic audio/visual alerts for agent state changes
