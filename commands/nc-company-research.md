@@ -37,6 +37,9 @@ description: Perform comprehensive research on a given company
 #### Glassdoor review summary (rating, pros, cons)
 #### Cultural values or known internal practices
 #### Interview experiences (if available)
+
+## Sources
+Include links to sources as bullet points
 ```
 
 2. Return the result in a clean, structured format with clear markdown-style headings and bullet points. Keep it concise but insightful. 
