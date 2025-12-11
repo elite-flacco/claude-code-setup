@@ -8,7 +8,7 @@ This workspace provides a collection of custom commands, specialized agents, and
 
 ## Features
 
-### 📁 Commands (18 available)
+### 📁 Commands (19 available)
 
 All commands use the `cc-` prefix for Claude Code commands:
 
@@ -41,6 +41,7 @@ All commands use the `cc-` prefix for Claude Code commands:
 
 #### Research Commands
 - **nc-company-research** - Research and analyze company information
+- **nc-people-research** - Comprehensive people research for interview preparation
 
 ### 🤖 Agents (1 available)
 
@@ -64,6 +65,9 @@ All commands use the `cc-` prefix for Claude Code commands:
 - **changelogbot.yml** - Automated changelog and README updates on weekly schedule using `cc-` prefixed commands
 
 ## Recent Updates
+
+### v0.6.1 - 2025-12-07
+- ✨ Added `nc-people-research` command for comprehensive interview preparation
 
 ### v0.6.0 - 2025-12-02
 - ♻️ Standardized command naming with `cc-` prefix for all Claude Code commands
@@ -135,7 +139,7 @@ Automatically deployed when using `/cc-add-gh-workflows` command. Includes compr
 .
 ├── .claude/
 │   └── commands/        # Active Claude Code command (used by workflows)
-├── commands/            # Custom Claude Code commands (18 available, cc- prefixed)
+├── commands/            # Custom Claude Code commands (19 available, cc- prefixed)
 ├── agents/             # Specialized AI agents (1 available)
 ├── hooks/              # Event-driven TypeScript scripts (3 available)
 ├── github/             # GitHub workflow templates
