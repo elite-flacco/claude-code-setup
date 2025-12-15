@@ -8,7 +8,7 @@ This workspace provides a collection of custom commands, specialized agents, and
 
 ## Features
 
-### 📁 Commands (19 available)
+### 📁 Commands (20 available)
 
 All commands use the `cc-` prefix for Claude Code commands:
 
@@ -26,6 +26,7 @@ All commands use the `cc-` prefix for Claude Code commands:
 - **cc-init-project** - Initialize new projects with standardized structure
 - **cc-setup-design-system** - Create comprehensive Tailwind CSS design systems
 - **cc-setup-design-system-tw-v4** - Tailwind CSS v4 specific design system setup
+- **cc-add-theme-toggle** - Add dark mode/theme toggle to Next.js applications using next-themes
 - **cc-design-mode** - Switch projects into design/prototyping mode
 - **cc-add-scripts** - Add utility scripts to projects
 
@@ -139,7 +140,7 @@ Automatically deployed when using `/cc-add-gh-workflows` command. Includes compr
 .
 ├── .claude/
 │   └── commands/        # Active Claude Code command (used by workflows)
-├── commands/            # Custom Claude Code commands (19 available, cc- prefixed)
+├── commands/            # Custom Claude Code commands (20 available, cc- prefixed)
 ├── agents/             # Specialized AI agents (1 available)
 ├── hooks/              # Event-driven TypeScript scripts (3 available)
 ├── github/             # GitHub workflow templates
