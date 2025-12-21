@@ -67,39 +67,48 @@ All commands use the `cc-` prefix for Claude Code commands:
 
 ## Recent Updates
 
-### v0.6.1 - 2025-12-07
+### v0.6.2 - 2025-12-07
 - ✨ Added `nc-people-research` command for comprehensive interview preparation
+- ✨ Added Notion integration for fetching and storing research results
+- ♻️ Improved company research template formatting with structured sections
 
-### v0.6.0 - 2025-12-02
+### v0.6.1 - 2025-12-02
+- 🔧 Enhanced instructions for `cc-show-prs`, `nc-company-research`, `cc-add-scripts`, and `cc-commit` commands
+
+### v0.6.0 - 2025-11-26
 - ♻️ Standardized command naming with `cc-` prefix for all Claude Code commands
-- 🔧 Updated changelogbot workflow to use new command naming convention (`cc-update-changelog`, `cc-update-readme`)
 - ✨ Added new commands: `cc-show-prs`, `cc-add-scripts`, and `nc-company-research`
+- 🔧 Added environment variable support for MCP server setup
 
-### v0.5.0 - 2025-09-07
+### v0.5.1 - 2025-09-21
+- 🐛 Fixed workflow and agent counts in README documentation
+
+### v0.5.0 - 2025-09-08
 - 🚀 Added GitHub workflow automation with weekly changelog and README updates
+- ✨ Enhanced design system with responsive typography and breakpoint-aware sizing
+- ♻️ Restructured GitHub workflow files with `cc-` prefixed naming
 
 ### v0.4.0 - 2025-08-28
 - ✨ Added GitHub workflows command for automated CI/CD setup
 - ✨ Comprehensive GitHub workflow templates including:
   - CI/CD pipeline with Node.js testing and build
-  - Dependabot configuration with auto-merge capabilities  
+  - Dependabot configuration with auto-merge capabilities
   - Claude Code integration workflows for automated PR reviews
   - Claude assistant workflow for interactive GitHub support
-- 📝 Updated commands instructions and tool permissions
+- 🔧 Updated commands instructions and tool permissions
 
 ### v0.3.0 - 2025-08-25
 - ✨ Added OpenAI agent with comprehensive API playbook for modern OpenAI development
 - ✨ Added Supabase edge function deployment command with automated CLI setup
-- 📝 Enhanced project documentation and changelog maintenance
 
 ### v0.2.0 - 2025-08-23
 - ✨ Added git worktree command definitions with proper tool permissions
-- 📝 Enhanced commit command documentation with comprehensive checks
 - ✨ Comprehensive design system setup commands for modern web development
+- 🔧 Enhanced commit command documentation with comprehensive checks
 
 ### v0.1.0 - 2025-08-08
-- 🔧 MCP server installation automation (playwright, context7)
 - 🎉 Initial Claude Code workspace setup with project structure
+- 🔧 MCP server installation automation (playwright, context7)
 
 ## Design System
 
