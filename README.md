@@ -67,8 +67,19 @@ All commands use the `cc-` prefix for Claude Code commands:
 
 ## Recent Updates
 
-### v0.6.1 - 2025-12-07
+### v0.6.3 - 2025-12-28
+- ✨ Added `cc-add-theme-toggle` command for Next.js dark mode/theme toggle using next-themes
+- 📝 Documentation includes both dropdown and simple button toggle implementations
+- 🎨 Supports Tailwind CSS v3 and v4 with comprehensive configuration examples
+
+### v0.6.2 - 2025-12-07
 - ✨ Added `nc-people-research` command for comprehensive interview preparation
+- 🔗 Notion integration for fetching and storing research results
+- 📋 Structured format for professional background and interview focus areas
+
+### v0.6.1 - 2025-12-02
+- 📝 Enhanced instructions for `cc-show-prs` and `nc-company-research` commands
+- 🔧 Improved instructions for `cc-add-scripts` and `cc-commit` commands
 
 ### v0.6.0 - 2025-12-02
 - ♻️ Standardized command naming with `cc-` prefix for all Claude Code commands
