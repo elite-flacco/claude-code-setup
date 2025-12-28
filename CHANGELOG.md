@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.7.0] - 2025-12-28
+
+### Added
+- cc-add-theme-toggle command for adding dark mode/theme toggle functionality to Next.js applications using next-themes
+- Comprehensive theme toggle implementation with dropdown and simple button options
+- Support for Tailwind CSS v3 and v4 dark mode configurations
+- Theme provider wrapper component with system preference detection
+- Custom themes support and hydration mismatch handling
+
+### Changed
+- Updated README documentation to include cc-add-theme-toggle command
+- Updated total command count from 19 to 20 in documentation
+
 ## [0.6.2] - 2025-12-07
 
 ### Added
