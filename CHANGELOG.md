@@ -5,12 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.3] - 2025-12-15
+
+### Added
+- cc-add-theme-toggle command for Next.js dark mode/theme toggle using next-themes
+- cc-explain-to-me command for explaining error messages in plain language
+
+### Changed
+- Enhanced cc-add-scripts command with additional utility script options
+- Updated README to include cc-add-theme-toggle command documentation
+
 ## [0.6.2] - 2025-12-07
 
 ### Added
 - nc-people-research command for interviewer research and interview preparation
 - Notion integration for fetching and storing research results
-- Structured format for professional background, interview focus areas, and prep checklist
 
 ### Changed
 - Improved company research template formatting with numbered sections and bullet points
