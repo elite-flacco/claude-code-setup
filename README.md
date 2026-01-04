@@ -8,7 +8,7 @@ This workspace provides a collection of custom commands, specialized agents, and
 
 ## Features
 
-### 📁 Commands (21 available)
+### 📁 Commands (20 available)
 
 All commands use the `cc-` prefix for Claude Code commands:
 
@@ -45,10 +45,6 @@ All commands use the `cc-` prefix for Claude Code commands:
 - **cc-update-readme** - Automatically update README files based on recent changes
 - **cc-update-changelog** - Generate and maintain changelog entries
 
-#### Utility Commands
-
-- **cc-explain-to-me** - Explain error messages in plain, technically accurate language
-
 #### Research Commands
 
 - **nc-company-research** - Research and analyze company information
@@ -81,7 +77,6 @@ All commands use the `cc-` prefix for Claude Code commands:
 
 ### v0.6.3 - 2025-12-15
 - ✨ Added `cc-add-theme-toggle` command for Next.js dark mode/theme toggle using next-themes
-- ✨ Added `cc-explain-to-me` command for explaining error messages in plain language
 - ✨ Enhanced `cc-add-scripts` command with additional utility script options
 
 ### v0.6.2 - 2025-12-07
@@ -138,7 +133,7 @@ Automatically deployed when using `/cc-add-gh-workflows` command. Includes compr
 .
 ├── .claude/
 │   └── commands/        # Active Claude Code command (used by workflows)
-├── commands/            # Custom Claude Code commands (21 available, cc- prefixed)
+├── commands/            # Custom Claude Code commands (20 available, cc- prefixed)
 ├── agents/             # Specialized AI agents (1 available)
 ├── hooks/              # Event-driven TypeScript scripts (3 available)
 ├── github/             # GitHub workflow templates
