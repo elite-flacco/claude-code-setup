@@ -79,18 +79,19 @@ All commands use the `cc-` prefix for Claude Code commands:
 
 ## Recent Updates
 
-### v0.6.3 - 2025-12-15
+### v0.6.3 - 2026-01-07
+- ✨ Added `cc-explain-to-me` command for explaining error messages in plain, technically accurate language
 - ✨ Added `cc-add-theme-toggle` command for Next.js dark mode/theme toggle using next-themes
-- ✨ Added `cc-explain-to-me` command for explaining error messages in plain language
 - ✨ Enhanced `cc-add-scripts` command with additional utility script options
+- 🔧 Improved dependency management with ESLint package grouping in Dependabot
 
 ### v0.6.2 - 2025-12-07
-- ✨ Added `nc-people-research` command for interviewer research and interview preparation
+- ✨ Added `nc-people-research` command for comprehensive interviewer research and interview preparation
 
 ### v0.6.1 - 2025-12-02
 - ♻️ Standardized command naming with `cc-` prefix for all Claude Code commands
-- ✨ Enhanced instruction for cc-show-prs and nc-company-research commands
-- ✨ Improved instruction for cc-add-scripts and cc-commit commands
+- ✨ Enhanced instructions for cc-show-prs and nc-company-research commands
+- ✨ Improved instructions for cc-add-scripts and cc-commit commands
 
 ## Design System
 
