@@ -58,6 +58,11 @@ All commands use the `cc-` prefix for Claude Code commands:
 
 - **openai** - Comprehensive OpenAI API implementation guidance covering Responses API, structured outputs, tool use, streaming, and realtime features
 
+### 🎨 Skills (2 available)
+
+- **fluid-typography** - Create responsive, fluid typography systems using CSS clamp() with mathematically precise scaling
+- **theme-toggle-creator** - Set up dark mode/theme toggle in Next.js applications with next-themes integration
+
 ### ⚡ Hooks (3 available)
 
 - **notification.ts** - Logs notifications and plays sound/speech alerts when agents need attention
@@ -121,6 +126,10 @@ Available via Claude Code's slash command interface:
 
 Automatically invoked by Claude Code when working on relevant tasks or can be explicitly requested for specialized assistance.
 
+### Skills
+
+Reusable capabilities that can be invoked via slash commands for specialized tasks like typography systems and theme toggles.
+
 ### Hooks
 
 Event-driven TypeScript scripts that automatically execute on Claude Code events:
@@ -141,6 +150,7 @@ Automatically deployed when using `/cc-add-gh-workflows` command. Includes compr
 │   └── commands/        # Active Claude Code command (used by workflows)
 ├── commands/            # Custom Claude Code commands (21 available, cc- prefixed)
 ├── agents/             # Specialized AI agents (1 available)
+├── skills/             # Reusable skills for specialized tasks (2 available)
 ├── hooks/              # Event-driven TypeScript scripts (3 available)
 ├── github/             # GitHub workflow templates
 │   ├── workflows/      # CI/CD, Dependabot, and Claude integration workflows (5 available)
