@@ -8,6 +8,11 @@
 /debug
 /file-history
 /scripts/.env
+/plans
+/plugins/cache
+/plugins/**.json
+/cache
 .credentials.json
 settings.json.backup
 history.jsonl
+stats-cache.json
