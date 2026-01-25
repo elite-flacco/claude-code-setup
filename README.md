@@ -58,10 +58,16 @@ All commands use the `cc-` prefix for Claude Code commands:
 
 - **openai** - Comprehensive OpenAI API implementation guidance covering Responses API, structured outputs, tool use, streaming, and realtime features
 
-### 🎨 Skills (2 available)
+### 🎨 Skills (8 available)
 
+- **agent-browser** - Browser automation and web interaction capabilities for agents
 - **fluid-typography** - Create responsive, fluid typography systems using CSS clamp() with mathematically precise scaling
+- **remotion-best-practices** - Comprehensive Remotion video framework best practices covering 3D, animations, assets, audio, captions, charts, fonts, timing, and more
+- **skill-creator** - Tools and templates for creating new custom skills
+- **supabase-postgres-best-practices** - PostgreSQL and Supabase best practices for performance, security, indexing, connection management, and query optimization
 - **theme-toggle-creator** - Set up dark mode/theme toggle in Next.js applications with next-themes integration
+- **vercel-react-best-practices** - React and Next.js performance optimization covering rendering, async operations, bundling, client-side patterns, and server components
+- **web-design-guidelines** - Comprehensive web design principles and guidelines
 
 ### ⚡ Hooks (3 available)
 
@@ -128,7 +134,13 @@ Automatically invoked by Claude Code when working on relevant tasks or can be ex
 
 ### Skills
 
-Reusable capabilities that can be invoked via slash commands for specialized tasks like typography systems and theme toggles.
+Reusable capabilities that can be invoked via slash commands for specialized tasks including:
+- Typography systems and theme toggles
+- Video production with Remotion
+- PostgreSQL/Supabase optimization
+- React/Next.js performance best practices
+- Browser automation
+- Custom skill creation
 
 ### Hooks
 
@@ -150,7 +162,7 @@ Automatically deployed when using `/cc-add-gh-workflows` command. Includes compr
 │   └── commands/        # Active Claude Code command (used by workflows)
 ├── commands/            # Custom Claude Code commands (21 available, cc- prefixed)
 ├── agents/             # Specialized AI agents (1 available)
-├── skills/             # Reusable skills for specialized tasks (2 available)
+├── skills/             # Reusable skills for specialized tasks (8 available)
 ├── hooks/              # Event-driven TypeScript scripts (3 available)
 ├── github/             # GitHub workflow templates
 │   ├── workflows/      # CI/CD, Dependabot, and Claude integration workflows (5 available)
