@@ -68,6 +68,7 @@ All commands use the `cc-` prefix for Claude Code commands:
 - **theme-toggle-creator** - Set up dark mode/theme toggle in Next.js applications with next-themes integration
 - **vercel-react-best-practices** - React and Next.js performance optimization covering rendering, async operations, bundling, client-side patterns, and server components
 - **web-design-guidelines** - Comprehensive web design principles and guidelines
+- **design-inspirations** - Create multiple visual variations of UI components
 
 ### ⚡ Hooks (3 available)
 
