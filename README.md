@@ -58,17 +58,24 @@ All commands use the `cc-` prefix for Claude Code commands:
 
 - **openai** - Comprehensive OpenAI API implementation guidance covering Responses API, structured outputs, tool use, streaming, and realtime features
 
-### 🎨 Skills (8 available)
+### 🎨 Skills (16 available)
 
 - **agent-browser** - Browser automation and web interaction capabilities for agents
+- **design-inspirations** - Create multiple visual variations of UI components
 - **fluid-typography** - Create responsive, fluid typography systems using CSS clamp() with mathematically precise scaling
+- **n8n-code-javascript** - JavaScript code generation and best practices for n8n workflow automation
+- **n8n-code-python** - Python code generation and best practices for n8n workflow automation
+- **n8n-expression-syntax** - n8n expression syntax and data transformation patterns
+- **n8n-mcp-tools-expert** - n8n MCP (Model Context Protocol) tools integration expertise
+- **n8n-node-configuration** - n8n node configuration and workflow building guidance
+- **n8n-validation-expert** - n8n workflow validation and error handling best practices
+- **n8n-workflow-patterns** - Common n8n workflow patterns and automation strategies
 - **remotion-best-practices** - Comprehensive Remotion video framework best practices covering 3D, animations, assets, audio, captions, charts, fonts, timing, and more
 - **skill-creator** - Tools and templates for creating new custom skills
 - **supabase-postgres-best-practices** - PostgreSQL and Supabase best practices for performance, security, indexing, connection management, and query optimization
 - **theme-toggle-creator** - Set up dark mode/theme toggle in Next.js applications with next-themes integration
 - **vercel-react-best-practices** - React and Next.js performance optimization covering rendering, async operations, bundling, client-side patterns, and server components
 - **web-design-guidelines** - Comprehensive web design principles and guidelines
-- **design-inspirations** - Create multiple visual variations of UI components
 
 ### ⚡ Hooks (3 available)
 
@@ -91,19 +98,28 @@ All commands use the `cc-` prefix for Claude Code commands:
 
 ## Recent Updates
 
-### v0.6.3 - 2026-01-07
+### v0.7.0 - 2026-01-26
+- ✨ Added n8n skills suite for workflow automation (7 skills covering JavaScript, Python, expressions, MCP tools, node configuration, validation, and workflow patterns)
+- ✨ Added `design-inspirations` skill for creating multiple visual variations of UI components
+- ✨ Added `skill-creator` skill for guiding the creation of effective Claude Code skills
+- ✨ Added `supabase-postgres-best-practices` skill for Postgres performance optimization
+- ✨ Added `remotion-best-practices` skill for React video creation with Remotion
+- ✨ Added `web-design-guidelines` skill for UI code review against Web Interface Guidelines
+- ✨ Added `vercel-react-best-practices` skill for React/Next.js performance optimization
+- ✨ Added `agent-browser` skill for web automation using browser CLI tool
+- 📝 Updated README to reflect all available skills documentation
+
+### v0.6.5 - 2026-01-18
+- ✨ Added `fluid-typography` skill for implementing responsive typography with CSS clamp()
+- ✨ Added `theme-toggle-creator` skill for adding dark mode to Next.js applications using next-themes
+
+### v0.6.4 - 2026-01-11
+- 🔧 Enhanced Dependabot configuration with ESLint package grouping for better dependency management
+
+### v0.6.3 - 2025-12-15
 - ✨ Added `cc-explain-to-me` command for explaining error messages in plain, technically accurate language
 - ✨ Added `cc-add-theme-toggle` command for Next.js dark mode/theme toggle using next-themes
 - ✨ Enhanced `cc-add-scripts` command with additional utility script options
-- 🔧 Improved dependency management with ESLint package grouping in Dependabot
-
-### v0.6.2 - 2025-12-07
-- ✨ Added `nc-people-research` command for comprehensive interviewer research and interview preparation
-
-### v0.6.1 - 2025-12-02
-- ♻️ Standardized command naming with `cc-` prefix for all Claude Code commands
-- ✨ Enhanced instructions for cc-show-prs and nc-company-research commands
-- ✨ Improved instructions for cc-add-scripts and cc-commit commands
 
 ## Design System
 
@@ -142,6 +158,9 @@ Reusable capabilities that can be invoked via slash commands for specialized tas
 - React/Next.js performance best practices
 - Browser automation
 - Custom skill creation
+- n8n workflow automation (7 specialized skills)
+- UI design patterns and variations
+- Web design guidelines and best practices
 
 ### Hooks
 
@@ -163,7 +182,7 @@ Automatically deployed when using `/cc-add-gh-workflows` command. Includes compr
 │   └── commands/        # Active Claude Code command (used by workflows)
 ├── commands/            # Custom Claude Code commands (21 available, cc- prefixed)
 ├── agents/             # Specialized AI agents (1 available)
-├── skills/             # Reusable skills for specialized tasks (8 available)
+├── skills/             # Reusable skills for specialized tasks (16 available)
 ├── hooks/              # Event-driven TypeScript scripts (3 available)
 ├── github/             # GitHub workflow templates
 │   ├── workflows/      # CI/CD, Dependabot, and Claude integration workflows (5 available)
