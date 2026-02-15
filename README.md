@@ -223,9 +223,20 @@ Automatically deployed when using `/cc-add-gh-workflows` command. Includes compr
 - **Cross-Platform Sound Support** - Notification sounds for macOS, Windows, and Linux
 - **Chat Transcript Processing** - Automatic processing and storage of conversation transcripts
 
+## Project Instructions
+
+This repository includes a comprehensive `CLAUDE.md` file with global instructions for Claude Code agents working in this workspace. The instructions cover:
+
+- **Plan File Management** - Standardized workflow for creating and managing plan files in `/plans` directory
+- **Independent Thinking & Technical Pushback** - Guidelines for technical collaboration and pushing back on unnecessary complexity
+- **File Navigation** - Best practices for efficient codebase exploration
+- **Codebase Exploration Efficiency** - Token-efficient exploration strategies for different codebase sizes
+- **Browser Automation** - Using `agent-browser` for web automation tasks
+
 ## Getting Started
 
 1. This workspace is automatically configured for Claude Code
 2. Use `/help` to see available commands
 3. Commands include built-in tool permissions and safety checks
 4. Agents are invoked automatically based on task context
+5. Review `CLAUDE.md` for detailed workflow instructions and best practices
