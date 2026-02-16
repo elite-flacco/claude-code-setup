@@ -11,7 +11,11 @@
 /plans
 /plugins/cache
 /plugins/**.json
+/plugins/.install-manifests/
+/usage-data
+/tasks
 /cache
+/paste-cache
 .credentials.json
 settings.json.backup
 history.jsonl
