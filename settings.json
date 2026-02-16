@@ -65,17 +65,6 @@
           }
         ]
       }
-    ],
-    "SubagentStop": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "npx tsx C:/Users/shuan/.claude/hooks/subagent_stop.ts"
-          }
-        ]
-      }
     ]
   },
   "statusLine": {
@@ -83,9 +72,12 @@
     "command": "powershell -NoProfile -ExecutionPolicy Bypass -File C:\\Users\\shuan\\.claude\\statusline-command.ps1"
   },
   "enabledPlugins": {
-    "frontend-design@claude-plugins-official": true
+    "frontend-design@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true,
+  "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754091193006
   }
