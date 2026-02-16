@@ -2,33 +2,41 @@
 
 ## Plan File Management
 
-**CRITICAL: All plan files MUST be created as .md files in the `/plans` directory of the current project.**
+**CRITICAL: All plan files MUST be created under the user's actual project directory — NOT under `~/.claude/` or any Claude config directory.**
+
+The "project root" means the directory where the user's codebase lives (e.g. `~/projects/my-app`), which is shown as the **Primary working directory** in your environment context at the start of every session.
 
 ### Plan Mode Workflow (MUST FOLLOW IN ORDER)
 
 When entering plan mode, you MUST complete ALL these steps before calling ExitPlanMode:
 
-1. **Create the plans directory** (if it doesn't exist):
-   ```bash
-   mkdir -p plans
-   ```
+1. **Identify the correct project root** — check the `Primary working directory` from your environment. If it is `~/.claude` or any path ending in `.claude`, that is your config directory, NOT a project. In that case, ask the user which project directory to use before proceeding.
 
-2. **Write the plan file** using the Write tool:
-   - **Location:** `plans/YYYY-MM-DD-<descriptive-name>.md`
-   - **Example:** `plans/2026-02-09-add-search-filters.md`
+2. **Create the plans directory inside the project root** (if it doesn't exist):
+   ```bash
+   mkdir -p <project-root>/plans
+   ```
+   Use the absolute path — never a bare relative `plans/` that might resolve to `~/.claude/plans/`.
+
+3. **Write the plan file** using the Write tool:
+   - **Location:** `<project-root>/plans/YYYY-MM-DD-<descriptive-name>.md`
+   - **Example:** `/home/user/projects/my-app/plans/2026-02-09-add-search-filters.md`
    - **NEVER skip this step** - ExitPlanMode should only be called AFTER the plan file is written
 
-3. **Verify the plan was created**:
+4. **Verify the plan was created**:
    ```bash
-   ls plans/
+   ls <project-root>/plans/
    ```
 
-4. **Then and only then** call ExitPlanMode
+5. **Then and only then** call ExitPlanMode
 
 ### Plan File Location Rules
 
-1. **Always create plans in:** `<project-root>/plans/<filename>.md`
-2. **Never create plans in:** project root, temp directories, arbitrary locations, or global claude code user directory
+1. **Always create plans in:** `<project-root>/plans/<filename>.md` where `<project-root>` is the user's codebase directory
+2. **NEVER create plans in:**
+   - `~/.claude/plans/` or any path containing `.claude`
+   - The project root itself (plans must be inside a `plans/` subdirectory)
+   - Temp directories or arbitrary locations
 3. **Plan file naming:** Use descriptive names with timestamps
    - Format: `YYYY-MM-DD-<feature-description>.md`
    - Example: `2026-02-09-add-search-filters.md`
@@ -43,11 +51,15 @@ Every plan file should be a markdown file (.md) containing:
 
 ### Common Mistakes to Avoid
 
+❌ **DON'T:** Create plans in `~/.claude/plans/` — that is the Claude config directory, not a project
+❌ **DON'T:** Use a bare relative path `plans/` without confirming the working directory is the project root
 ❌ **DON'T:** Call ExitPlanMode without first writing the plan file with the Write tool
 ❌ **DON'T:** Write plans to the project root or temp directories
 ❌ **DON'T:** Use non-.md file extensions
-✅ **DO:** Always use Write tool to create `plans/<name>.md` before calling ExitPlanMode
-✅ **DO:** Verify with `ls plans/` that the file was created
+✅ **DO:** Check `Primary working directory` in the environment context to confirm you are in the right project
+✅ **DO:** Use the absolute path when creating the plans directory
+✅ **DO:** Always use Write tool to create `<project-root>/plans/<name>.md` before calling ExitPlanMode
+✅ **DO:** Verify with `ls <project-root>/plans/` that the file was created
 
 
 ## Independent Thinking & Technical Pushback
