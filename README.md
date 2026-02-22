@@ -98,6 +98,12 @@ All commands use the `cc-` prefix for Claude Code commands:
 
 ## Recent Updates
 
+### v0.7.1 - 2026-02-15
+
+- 📝 Enhanced `CLAUDE.md` with plan file management guidelines and independent thinking instructions
+- 🔧 Improved codebase exploration efficiency guidelines with token optimization strategies
+- 📝 Added browser automation documentation for `agent-browser` usage
+
 ### v0.7.0 - 2026-01-26
 - ✨ Added n8n skills suite for workflow automation (7 skills covering JavaScript, Python, expressions, MCP tools, node configuration, validation, and workflow patterns)
 - ✨ Added `design-inspirations` skill for creating multiple visual variations of UI components
@@ -188,6 +194,8 @@ Automatically deployed when using `/cc-add-gh-workflows` command. Includes compr
 │   ├── workflows/      # CI/CD, Dependabot, and Claude integration workflows (5 available)
 │   └── dependabot.yml  # Dependabot configuration
 ├── scripts/            # Utility scripts
+├── statusline-command.sh   # Bash statusline script for Claude Code status display
+├── statusline-command.ps1  # PowerShell statusline script for Windows
 ├── settings.json       # Claude Code workspace settings
 ├── CHANGELOG.md        # Project changelog
 └── README.md           # This file
