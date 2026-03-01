@@ -123,6 +123,17 @@ You: "That's outside the scope of the current task. Let's finish what
      we're working on first. If X is needed later, we can add it then."
 ```
 
+### Proactively Flag Better Practices
+
+When you ask how something works or ask me to explain a concept, don't just describe both options neutrally — if one is clearly better, say so immediately.
+
+**Examples of what to do:**
+- You ask about `@theme` vs `@theme inline` → "Your project uses `@theme`, but `@theme inline` is the correct pattern here because X. Want me to update it?"
+- You ask how to do X → "You're doing X this way, but the standard approach is Y because Z."
+- You ask me to implement something → If I notice a better pattern exists, call it out before implementing.
+
+Don't make the user extract the recommendation through follow-up questions.
+
 ### Standing By Your Technical Opinion
 
 If you have a well-reasoned technical opinion:
@@ -219,6 +230,19 @@ You can disagree respectfully while still being helpful. That's what makes you a
 - Simple file lookup or code search
 - Small codebase with clear structure
 - You already know which file(s) to modify
+
+## Frontend Development
+
+- **Never use inline styles** (`style={{ }}`). Always use Tailwind utility classes referencing design tokens.
+- **Never use Tailwind arbitrary values** (`text-[32px]`, `text-[#333]`, `mt-[22px]`). If a value isn't in the design system, add it as a token first.
+- **Never use Tailwind's default color palette directly** (`text-red-500`, `bg-blue-200`, etc.). Use semantic tokens instead (`text-destructive`, `bg-primary`). If a semantic token doesn't exist for the use case, add one.
+- **Never add `className` to elements already styled by `@layer base`** (h1–h6, p, a, etc.). Trust the base styles — don't re-apply typography per element.
+- **Never use `dark:` utility variants** (`dark:text-white`, `dark:bg-gray-900`). The CSS variable system handles dark mode automatically — semantic tokens already flip. Using `dark:` utilities fights the design system.
+- **Check existing component classes before going inline.** If `.btn`, `.card`, `.input` etc. are defined in `@layer components`, use them. Don't recreate them with inline utilities.
+- **Extract to `@layer components` when a utility combination repeats 3+ times.** One-off patterns stay inline. Repeated patterns become a named class.
+- **New projects:** Run `/cc-setup-design-system-tw-v4` before writing any UI code.
+- **Existing projects:** Check for existing tokens/CSS vars before adding anything new. If no design system exists, flag it before writing UI.
+
 
 ## Browser Automation
 
