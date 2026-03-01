@@ -83,6 +83,14 @@ All commands use the `cc-` prefix for Claude Code commands:
 - **stop.ts** - Handles agent completion events with sound notifications and chat transcript processing
 - **subagent_stop.ts** - Manages subagent completion notifications with cross-platform sound support
 
+### 🔌 Plugins (3 enabled)
+
+Official Claude Code plugins configured in `settings.json`:
+
+- **code-simplifier** (`code-simplifier@claude-plugins-official`) - Code review and simplification via the `/simplify` skill, reviewing changed code for reuse, quality, and efficiency
+- **frontend-design** (`frontend-design@claude-plugins-official`) - Frontend design assistance and UI guidelines for building better interfaces
+- **superpowers** (`superpowers@claude-plugins-official`) - Enhanced Claude Code capabilities including keybindings management via `/keybindings-help`
+
 ### 🔗 GitHub Integration & Workflows (5 workflows)
 
 #### CI/CD Workflows
@@ -97,6 +105,10 @@ All commands use the `cc-` prefix for Claude Code commands:
 - **changelogbot.yml** - Automated changelog and README updates on weekly schedule using `cc-` prefixed commands
 
 ## Recent Updates
+
+### v0.7.2 - 2026-03-01
+
+- 📝 Added documentation for enabled official Claude Code plugins (`code-simplifier`, `frontend-design`, `superpowers`)
 
 ### v0.7.1 - 2026-02-15
 
@@ -175,6 +187,14 @@ Event-driven TypeScript scripts that automatically execute on Claude Code events
 - Provide audio/visual notifications for agent states
 - Log agent activities for monitoring and debugging
 - Cross-platform sound support (macOS, Windows, Linux)
+
+### Plugins
+
+Official Claude Code plugins enabled via `settings.json`:
+
+- `/simplify` - Review changed code for reuse, quality, and efficiency
+- `/keybindings-help` - Customize keyboard shortcuts and chord bindings
+- Frontend design guidance and UI best practices
 
 ### GitHub Workflows
 
