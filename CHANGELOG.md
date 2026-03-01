@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.7.2] - 2026-03-01
+
+### Added
+- Added `code-simplifier` and `superpowers` plugins to enabled plugins in settings
+
+### Changed
+- Improved plan file management in CLAUDE.md with explicit project root guidance and clearer directory creation instructions
+- Enhanced dependabot auto-merge workflow with improved logic and reliability
+- Added `@types/react` packages to dependabot dependency grouping
+- Removed `SubagentStop` hook from settings configuration
+- Updated README with v0.7.1 release notes and statusline command file references
+- Updated `.gitignore` with additional exclusions
+
 ## [0.7.1] - 2026-02-15
 
 ### Changed
