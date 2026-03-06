@@ -233,15 +233,9 @@ You can disagree respectfully while still being helpful. That's what makes you a
 
 ## Frontend Development
 
-- **Never use inline styles** (`style={{ }}`). Always use Tailwind utility classes referencing design tokens.
-- **Never use Tailwind arbitrary values** (`text-[32px]`, `text-[#333]`, `mt-[22px]`). If a value isn't in the design system, add it as a token first.
-- **Never use Tailwind's default color palette directly** (`text-red-500`, `bg-blue-200`, etc.). Use semantic tokens instead (`text-destructive`, `bg-primary`). If a semantic token doesn't exist for the use case, add one.
-- **Never add `className` to elements already styled by `@layer base`** (h1–h6, p, a, etc.). Trust the base styles — don't re-apply typography per element.
-- **Never use `dark:` utility variants** (`dark:text-white`, `dark:bg-gray-900`). The CSS variable system handles dark mode automatically — semantic tokens already flip. Using `dark:` utilities fights the design system.
-- **Check existing component classes before going inline.** If `.btn`, `.card`, `.input` etc. are defined in `@layer components`, use them. Don't recreate them with inline utilities.
-- **Extract to `@layer components` when a utility combination repeats 3+ times.** One-off patterns stay inline. Repeated patterns become a named class.
-- **New projects:** Run `/cc-setup-design-system-tw-v4` before writing any UI code.
-- **Existing projects:** Check for existing tokens/CSS vars before adding anything new. If no design system exists, flag it before writing UI.
+- **Always TypeScript** for Next.js apps — never scaffold with `--js`.
+- **Never use Tailwind's default color palette** (`text-gray-500`, `bg-blue-200`, etc.) — always semantic tokens.
+- **For any task involving UI code** (Next.js, React, CSS, Tailwind): invoke the `frontend-rules` skill BEFORE writing or modifying any UI file.
 
 
 ## Browser Automation
