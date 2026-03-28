@@ -58,9 +58,10 @@ All commands use the `cc-` prefix for Claude Code commands:
 
 - **openai** - Comprehensive OpenAI API implementation guidance covering Responses API, structured outputs, tool use, streaming, and realtime features
 
-### 🎨 Skills (17 available)
+### 🎨 Skills (20 available)
 
 - **agent-browser** - Browser automation and web interaction capabilities for agents
+- **azdo-create-pr** - Create Azure DevOps pull requests with proper formatting, emoji titles, and work item linking
 - **design-inspirations** - Create multiple visual variations of UI components
 - **fluid-typography** - Create responsive, fluid typography systems using CSS clamp() with mathematically precise scaling
 - **frontend-rules** - Strict rules and constraints for all frontend development in Next.js/React/Tailwind projects (design tokens, no arbitrary values, no inline styles, TypeScript enforcement)
@@ -71,6 +72,8 @@ All commands use the `cc-` prefix for Claude Code commands:
 - **n8n-node-configuration** - n8n node configuration and workflow building guidance
 - **n8n-validation-expert** - n8n workflow validation and error handling best practices
 - **n8n-workflow-patterns** - Common n8n workflow patterns and automation strategies
+- **openshift-deploy-nextjs** - Deploy Next.js applications to OpenShift from scratch with full configuration
+- **openshift-update-app** - Rebuild and redeploy existing Next.js applications on OpenShift
 - **remotion-best-practices** - Comprehensive Remotion video framework best practices covering 3D, animations, assets, audio, captions, charts, fonts, timing, and more
 - **skill-creator** - Tools and templates for creating new custom skills
 - **supabase-postgres-best-practices** - PostgreSQL and Supabase best practices for performance, security, indexing, connection management, and query optimization
@@ -174,6 +177,9 @@ Reusable capabilities that can be invoked via slash commands for specialized tas
 - n8n workflow automation (7 specialized skills)
 - UI design patterns and variations
 - Web design guidelines and best practices
+- Azure DevOps PR creation with formatting and work item linking
+- OpenShift deployment and update workflows for Next.js apps
+- Frontend development rules and constraints
 
 ### Hooks
 
@@ -195,7 +201,7 @@ Automatically deployed when using `/cc-add-gh-workflows` command. Includes compr
 │   └── commands/        # Active Claude Code command (used by workflows)
 ├── commands/            # Custom Claude Code commands (21 available, cc- prefixed)
 ├── agents/             # Specialized AI agents (1 available)
-├── skills/             # Reusable skills for specialized tasks (17 available)
+├── skills/             # Reusable skills for specialized tasks (20 available)
 ├── hooks/              # Event-driven TypeScript scripts (3 available)
 ├── github/             # GitHub workflow templates
 │   ├── workflows/      # CI/CD, Dependabot, and Claude integration workflows (5 available)
