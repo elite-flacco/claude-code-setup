@@ -64,7 +64,7 @@ All commands use the `cc-` prefix for Claude Code commands:
 - **azdo-create-pr** - Create Azure DevOps pull requests with proper formatting, emoji titles, and work item linking
 - **design-inspirations** - Create multiple visual variations of UI components
 - **fluid-typography** - Create responsive, fluid typography systems using CSS clamp() with mathematically precise scaling
-- **frontend-rules** - Rules and constraints for all frontend development in Next.js/React/Tailwind projects
+- **frontend-rules** - Strict rules and constraints for all frontend development in Next.js/React/Tailwind projects (design tokens, no arbitrary values, no inline styles, TypeScript enforcement)
 - **n8n-code-javascript** - JavaScript code generation and best practices for n8n workflow automation
 - **n8n-code-python** - Python code generation and best practices for n8n workflow automation
 - **n8n-expression-syntax** - n8n expression syntax and data transformation patterns
@@ -101,6 +101,11 @@ All commands use the `cc-` prefix for Claude Code commands:
 - **changelogbot.yml** - Automated changelog and README updates on weekly schedule using `cc-` prefixed commands
 
 ## Recent Updates
+
+### v0.7.2 - 2026-03-05
+
+- ✨ Added `frontend-rules` skill with comprehensive Tailwind/React/Next.js constraints covering design tokens, no arbitrary values, no inline styles, TypeScript enforcement, and component extraction rules
+- 📝 Updated `CLAUDE.md` frontend section to automatically invoke `frontend-rules` skill before writing or modifying any UI file
 
 ### v0.7.1 - 2026-02-15
 
@@ -162,6 +167,7 @@ Automatically invoked by Claude Code when working on relevant tasks or can be ex
 ### Skills
 
 Reusable capabilities that can be invoked via slash commands for specialized tasks including:
+- Frontend rules enforcement for Next.js/React/Tailwind projects
 - Typography systems and theme toggles
 - Video production with Remotion
 - PostgreSQL/Supabase optimization
