@@ -236,6 +236,7 @@ You can disagree respectfully while still being helpful. That's what makes you a
 - **Always TypeScript** for Next.js apps — never scaffold with `--js`.
 - **Never use Tailwind's default color palette** (`text-gray-500`, `bg-blue-200`, etc.) — always semantic tokens.
 - **For any task involving UI code** (Next.js, React, CSS, Tailwind): invoke the `frontend-rules` skill BEFORE writing or modifying any UI file.
+- **New projects**: invoke the `frontend-rules` skill before dispatching any UI subagent. It contains handoff instructions for both scaffolding and component subagents, including the design system template. The main agent is responsible for reading the `setup-design-system-tw` skill and passing the CSS template to the scaffolding subagent's prompt.
 
 
 ## Browser Automation
@@ -247,3 +248,4 @@ Core workflow:
 2. `agent-browser snapshot -i` - Get interactive elements with refs (@e1, @e2)
 3. `agent-browser click @e1` / `fill @e2 "text"` - Interact using refs
 4. Re-snapshot after page changes
+

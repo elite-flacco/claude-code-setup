@@ -1,3 +1,8 @@
+---
+name: setup-design-system-tw
+description: Set up a maintainable Tailwind CSS v4 design system with semantic tokens, fluid typography, badge color palette, and component classes. Invoke this skill when scaffolding a new frontend project or when globals.css doesn't exist yet.
+---
+
 # Set Up Tailwind v4 Design System
 
 **Goal**
@@ -5,7 +10,7 @@ Set up a maintainable design system in **Tailwind CSS v4** using a two-layer tok
 - Raw values in `:root` / `.dark` for runtime theming (no rebuild)
 - `@theme` to expose them as Tailwind utilities
 
-Includes fluid typography, light/dark mode, base element styles, layout utilities, and component classes.
+Includes fluid typography, light/dark mode, base element styles, layout utilities, component classes, and a **constrained badge color palette**.
 
 ## Instructions
 
@@ -24,6 +29,7 @@ Includes fluid typography, light/dark mode, base element styles, layout utilitie
 - **`@layer components`** for reusable UI patterns
 - **Global `*:focus-visible`** defined once in base — not repeated per component
 - **`prefers-reduced-motion`** respected
+- **Badge colors**: only use the 5 semantic badge tokens (`--badge-{1-5}`) — never raw Tailwind palette colors for badges or category indicators
 
 ## Token Model
 
@@ -39,6 +45,7 @@ Tokens:
 - `--border`, `--border-hover`
 - `--primary`, `--primary-foreground`
 - `--accent` (brand highlight, easily swappable)
+- `--badge-1` → `--badge-5` + `--badge-1-foreground` → `--badge-5-foreground` (constrained palette for colorful badges/tags)
 - `--text-xs` → `--text-5xl` (fluid clamp values)
 - `--leading-tight` → `--leading-loose`
 
@@ -68,6 +75,18 @@ Tokens:
   --color-primary:           var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-accent:            var(--accent);
+
+  /* Badge palette — use these for colorful badges/tags/category indicators */
+  --color-badge-1:            var(--badge-1);
+  --color-badge-1-foreground: var(--badge-1-foreground);
+  --color-badge-2:            var(--badge-2);
+  --color-badge-2-foreground: var(--badge-2-foreground);
+  --color-badge-3:            var(--badge-3);
+  --color-badge-3-foreground: var(--badge-3-foreground);
+  --color-badge-4:            var(--badge-4);
+  --color-badge-4-foreground: var(--badge-4-foreground);
+  --color-badge-5:            var(--badge-5);
+  --color-badge-5-foreground: var(--badge-5-foreground);
 
   --font-size-xs:   var(--text-xs);
   --font-size-sm:   var(--text-sm);
@@ -104,6 +123,15 @@ Tokens:
   /* Accent / brand highlight — TODO: swap for your brand color */
   --accent: #3b82f6;
 
+  /* Badge palette — 5 curated colors for categories/tags/status indicators.
+     Map your categories to badge-1 through badge-5 in your component code.
+     TODO: swap these for your brand-appropriate colors. */
+  --badge-1:            #e0f2f1;  --badge-1-foreground: #00695c;  /* teal    */
+  --badge-2:            #e3f2fd;  --badge-2-foreground: #1565c0;  /* blue    */
+  --badge-3:            #f3e5f5;  --badge-3-foreground: #7b1fa2;  /* purple  */
+  --badge-4:            #fff8e1;  --badge-4-foreground: #f57f17;  /* amber   */
+  --badge-5:            #fff3e0;  --badge-5-foreground: #e65100;  /* orange  */
+
   /* Fluid Typography Scale (320px → 1200px viewport)          */
   --text-xs:   clamp(0.75rem,  0.7rem   + 0.25vw,  0.875rem); /* 12→14px */
   --text-sm:   clamp(0.875rem, 0.825rem + 0.25vw,  1rem);     /* 14→16px */
@@ -135,6 +163,13 @@ Tokens:
   --primary:            #fafafa;
   --primary-foreground: #18181b;
   /* --accent: adjust for dark if needed */
+
+  /* Badge palette — dark mode variants */
+  --badge-1:            rgba(0, 105, 92, 0.25);   --badge-1-foreground: #80cbc4;  /* teal    */
+  --badge-2:            rgba(21, 101, 192, 0.25);  --badge-2-foreground: #90caf9;  /* blue    */
+  --badge-3:            rgba(123, 31, 162, 0.25);  --badge-3-foreground: #ce93d8;  /* purple  */
+  --badge-4:            rgba(245, 127, 23, 0.25);  --badge-4-foreground: #ffe082;  /* amber   */
+  --badge-5:            rgba(230, 81, 0, 0.25);    --badge-5-foreground: #ffcc80;  /* orange  */
 }
 
 /* ============================================================
@@ -423,6 +458,35 @@ Tokens:
   .badge-active {
     background: var(--foreground);
     color: var(--background);
+    border-color: transparent;
+  }
+
+  /* Colored badge variants — use these for categories, tags, status indicators.
+     Map your categories to badge-1 through badge-5 in component code.
+     Never use raw Tailwind palette colors (bg-teal-100, text-blue-800, etc.). */
+  .badge-1 {
+    background: var(--badge-1);
+    color: var(--badge-1-foreground);
+    border-color: transparent;
+  }
+  .badge-2 {
+    background: var(--badge-2);
+    color: var(--badge-2-foreground);
+    border-color: transparent;
+  }
+  .badge-3 {
+    background: var(--badge-3);
+    color: var(--badge-3-foreground);
+    border-color: transparent;
+  }
+  .badge-4 {
+    background: var(--badge-4);
+    color: var(--badge-4-foreground);
+    border-color: transparent;
+  }
+  .badge-5 {
+    background: var(--badge-5);
+    color: var(--badge-5-foreground);
     border-color: transparent;
   }
 

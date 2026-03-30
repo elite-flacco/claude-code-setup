@@ -9,7 +9,7 @@ This skill is **rigid** — follow every rule exactly. Do not adapt or skip.
 
 ## 1. Design System Setup (Non-Negotiable Sequence)
 
-**New projects:** Run `/cc-setup-design-system-tw-v4` as a **standalone step before writing any UI code or dispatching any UI subagent.** Subagents receive instructions, not skill invocations — globals.css with semantic tokens must exist before the UI prompt is written.
+**New projects:** Invoke the `setup-design-system-tw` skill as a **standalone step before writing any UI code or dispatching any UI subagent.** Subagents receive instructions, not skill invocations — globals.css with semantic tokens must exist before the UI prompt is written.
 
 **Existing projects:** Read `globals.css` before touching anything. Check what tokens and `@layer components` classes already exist. Never add new raw values — add a token first.
 
@@ -18,6 +18,7 @@ This skill is **rigid** — follow every rule exactly. Do not adapt or skip.
 - **Never** use Tailwind's default color palette directly: `text-gray-500`, `bg-blue-200`, `border-red-300`, etc.
 - **Always** use semantic tokens: `text-muted-foreground`, `bg-card`, `border-border`, etc.
 - If a semantic token doesn't exist for the use case, add it to `:root` in `globals.css` and map it in `@theme inline` first.
+- **Colorful badges/tags/category indicators**: use the `.badge-1` through `.badge-5` component classes (backed by `--badge-{n}` / `--badge-{n}-foreground` tokens). Never use raw palette colors like `bg-teal-100 text-teal-800`. Map categories to badge numbers in a `Record<Category, string>` constant.
 
 ## 3. No Arbitrary Values
 
@@ -51,6 +52,46 @@ This skill is **rigid** — follow every rule exactly. Do not adapt or skip.
 - **Always** use TypeScript for Next.js apps. Never scaffold with `--js` or plain JavaScript.
 - Prop interfaces for every component. `Record<string, T>` for dynamic key maps.
 
+## 9. Subagent Handoff (Critical)
+
+Subagents **cannot invoke skills** — they start fresh without access to the Skill tool. When dispatching a subagent (via the Agent tool) to do UI work, you **MUST include the appropriate rules** in the subagent's `prompt` parameter.
+
+### For scaffolding subagents (new project)
+
+Before dispatching, invoke the `setup-design-system-tw` skill yourself, read the CSS template from it, and include it in the subagent prompt:
+
+```
+FRONTEND DESIGN SYSTEM — follow these exactly:
+1. Use the globals.css template below as the project's global stylesheet. Do NOT create your own.
+2. NEVER use Tailwind's default color palette (text-gray-500, bg-blue-200, etc.) — only semantic tokens.
+3. NEVER use Tailwind arbitrary values, inline styles, or dark: variants.
+4. For colorful badges/tags/category indicators, use .badge-1 through .badge-5 classes only.
+5. Always TypeScript — never scaffold with --js.
+
+globals.css template:
+<paste the CSS template from the setup-design-system-tw skill here>
+```
+
+### For component/page subagents (existing project)
+
+Paste these rules verbatim into the subagent's `prompt` parameter:
+
+```
+FRONTEND RULES — follow these exactly:
+1. Read globals.css FIRST. Use only the semantic tokens and @layer components classes defined there. This file IS your design system — it contains all available colors, typography, and component classes.
+2. NEVER use Tailwind's default color palette (text-gray-500, bg-blue-200, etc.) — only semantic tokens (text-muted-foreground, bg-card, etc.).
+3. NEVER use Tailwind arbitrary values (text-[32px], mt-[22px], text-[#333]).
+4. NEVER use inline styles (style={{ }}).
+5. NEVER add className to h1-h6, p, or other @layer base elements — base styles apply automatically.
+6. NEVER use dark: variants — dark mode is handled by CSS variable swapping.
+7. For colorful badges/tags/category indicators: globals.css defines exactly 5 badge classes (.badge-1 through .badge-5) with curated colors and dark mode support. Map your categories to these classes using a Record constant. Example:
+   const CATEGORY_STYLES: Record<Category, string> = { "type-a": "badge-1", "type-b": "badge-2", ... };
+   Then use: <span className={CATEGORY_STYLES[item.category]}>
+   NEVER invent badge colors using raw Tailwind palette (bg-teal-100 text-teal-800, etc.).
+8. Check @layer components for existing classes (.btn, .card, .badge, etc.) before writing inline utilities.
+9. If a token doesn't exist, add it to :root in globals.css and map it in @theme inline — don't use raw values.
+```
+
 ## Quick Self-Check Before Committing
 
 - [ ] No `text-{color}-{shade}` or `bg-{color}-{shade}` from Tailwind's default palette
@@ -58,5 +99,6 @@ This skill is **rigid** — follow every rule exactly. Do not adapt or skip.
 - [ ] No `style={{ }}` anywhere
 - [ ] No `className` on h1–h6, p, or other `@layer base` elements
 - [ ] No `dark:` variants
+- [ ] Colorful badges use `.badge-1` through `.badge-5`, not raw palette colors
 - [ ] Repeated patterns extracted to `@layer components`
 - [ ] TypeScript throughout
