@@ -23,6 +23,7 @@ This skill is **rigid** — follow every rule exactly. Do not adapt or skip.
 ## 3. No Arbitrary Values
 
 - **Never** use Tailwind arbitrary values: `text-[32px]`, `mt-[22px]`, `text-[#333]`, `w-[420px]`
+- **Never** use `text-[length:var(--text-xs)]` or similar to reference typography tokens. The `@theme inline` block maps `--font-size-*` to your fluid variables, so `text-xs`, `text-sm`, `text-lg`, etc. already use the project's fluid scale. Use them directly.
 - If a value isn't in the design system, add it as a token. Then use the token.
 
 ## 4. No Inline Styles
@@ -32,8 +33,11 @@ This skill is **rigid** — follow every rule exactly. Do not adapt or skip.
 
 ## 5. No className on @layer base Elements
 
-- `@layer base` styles h1–h6, p, a, hr, code, etc. automatically.
-- **Never** add `className` to these elements to re-apply typography or color.
+- `@layer base` styles h1–h6, p, a, hr, code, span, etc. automatically.
+- **Never** add `className` to these elements to re-apply what base already provides. Common redundancies:
+  - `<p className="text-sm">` — base `p` is already `text-sm`. Remove `text-sm`.
+  - `<span className="text-xs">` — base `span` is already `text-xs`. Remove `text-xs`.
+  - Overrides to a **different** size (e.g., `<p className="text-xs">`) are fine — those intentionally change the base.
 - Use `.h1`–`.h6` aliases on non-heading elements when you need heading styles.
 - For UI chrome that needs non-standard sizing (e.g. a compact app header), use `<p>` or `<div>` with a named `@layer components` class — not a styled `<h1>`.
 
@@ -47,12 +51,26 @@ This skill is **rigid** — follow every rule exactly. Do not adapt or skip.
 - **Check `@layer components` first** before writing inline utility combinations. If `.btn`, `.card`, `.badge` etc. exist, use them.
 - **Extract to `@layer components`** when a utility combination repeats 3+ times across the codebase. One-off patterns stay inline.
 
-## 8. TypeScript
+## 8. Border Radius
+
+- **Default to `rounded-md`** (0.375rem) for interactive elements, inputs, and general containers. Never use bare `rounded` (0.25rem) — it's inconsistent with the component classes (`.btn`, `.input`, `.card` all use `rounded-md` or larger).
+- `rounded-lg` for cards, panels, and larger containers (already in `.card`).
+- `rounded-full` for badges, pills, and avatars (already in `.badge`).
+
+## 9. Button Classes
+
+- **Always** pair `btn` base with a variant: `btn btn-primary`, `btn btn-ghost`, `btn btn-outline`, `btn btn-link`. Never use a variant class without the `btn` base.
+- **Only use `btn` on actual action buttons** — not on interactive list items, nav items, card containers, or chip/pill elements that happen to be `<button>` for accessibility.
+  - Sidebar nav items, dropdown menu rows, clickable cards → use appropriate layout utilities or `.card`, not `.btn`.
+  - Badge-style interactive elements → use `.badge` + variant, not `.btn`.
+  - If a button pattern repeats 3+ times and doesn't fit an existing class, extract a new component class (e.g., `.btn-link` for text-style back buttons).
+
+## 10. TypeScript
 
 - **Always** use TypeScript for Next.js apps. Never scaffold with `--js` or plain JavaScript.
 - Prop interfaces for every component. `Record<string, T>` for dynamic key maps.
 
-## 9. Subagent Handoff (Critical)
+## 11. Subagent Handoff (Critical)
 
 Subagents **cannot invoke skills** — they start fresh without access to the Skill tool. When dispatching a subagent (via the Agent tool) to do UI work, you **MUST include the appropriate rules** in the subagent's `prompt` parameter.
 
@@ -90,15 +108,20 @@ FRONTEND RULES — follow these exactly:
    NEVER invent badge colors using raw Tailwind palette (bg-teal-100 text-teal-800, etc.).
 8. Check @layer components for existing classes (.btn, .card, .badge, etc.) before writing inline utilities.
 9. If a token doesn't exist, add it to :root in globals.css and map it in @theme inline — don't use raw values.
+10. NEVER use text-[length:var(--text-xs)] or similar — the @theme inline block maps --font-size-* to the fluid scale, so text-xs, text-sm, etc. work directly.
+11. Base `p` is already text-sm and base `span` is already text-xs. Don't re-apply those classes on those elements. Overriding to a DIFFERENT size (e.g., text-xs on p) is fine.
+12. Always pair btn base with a variant: btn btn-primary, btn btn-ghost, btn btn-outline, btn btn-link. Never use a variant alone. Only use btn on actual action buttons — not on nav items, card containers, or chips.
 ```
 
 ## Quick Self-Check Before Committing
 
 - [ ] No `text-{color}-{shade}` or `bg-{color}-{shade}` from Tailwind's default palette
-- [ ] No `text-[...]`, `mt-[...]`, or any other arbitrary value
-- [ ] No `style={{ }}` anywhere
-- [ ] No `className` on h1–h6, p, or other `@layer base` elements
+- [ ] No `text-[...]`, `mt-[...]`, or any other arbitrary value (including `text-[length:var(...)]`)
+- [ ] No `style={{ }}` anywhere (exception: third-party library APIs like Recharts that require style props)
+- [ ] No redundant `text-sm` on `<p>` or `text-xs` on `<span>` (base already applies these)
 - [ ] No `dark:` variants
 - [ ] Colorful badges use `.badge-1` through `.badge-5`, not raw palette colors
+- [ ] All `btn-*` variants paired with `btn` base class
+- [ ] `btn` only used on action buttons, not nav items or card containers
 - [ ] Repeated patterns extracted to `@layer components`
 - [ ] TypeScript throughout
