@@ -18,6 +18,8 @@
   --color-primary:           var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-accent:            var(--accent);
+  --color-danger:            var(--danger);
+  --color-danger-foreground: var(--danger-foreground);
 
   /* Badge palette — use these for colorful badges/tags/category indicators */
   --color-badge-1:            var(--badge-1);
@@ -66,6 +68,10 @@
   /* Accent / brand highlight — TODO: swap for your brand color */
   --accent: #3b82f6;
 
+  /* Danger / destructive actions — TODO: swap for your brand color */
+  --danger:            #dc2626;
+  --danger-foreground: #fafafa;
+
   /* Badge palette — 5 curated colors for categories/tags/status indicators.
      Map your categories to badge-1 through badge-5 in your component code.
      TODO: swap these for your brand-appropriate colors. */
@@ -106,6 +112,9 @@
   --primary:            #fafafa;
   --primary-foreground: #18181b;
   /* --accent: adjust for dark if needed */
+
+  --danger:            #ef4444;
+  --danger-foreground: #fafafa;
 
   /* Badge palette — dark mode variants */
   --badge-1:            rgba(0, 105, 92, 0.25);   --badge-1-foreground: #80cbc4;  /* teal    */
@@ -182,6 +191,7 @@
   /* span: size only — no color, to avoid breaking icon wrappers and inline elements */
   span {
     font-size: var(--text-xs);
+    color: var(--muted-foreground);
   }
 
   a {
@@ -256,8 +266,8 @@
 
   /* Global focus — defined once here, not repeated per component */
   *:focus-visible {
-    outline: 2px solid var(--foreground);
-    outline-offset: 2px;
+    outline: 0px solid var(--foreground);
+    outline-offset: 0px;
   }
 }
 
@@ -349,6 +359,15 @@
 
   .btn-outline:hover {
     border-color: var(--border-hover);
+  }
+
+  .btn-danger {
+    background: var(--danger);
+    color: var(--danger-foreground);
+  }
+
+  .btn-danger:hover {
+    opacity: 0.85;
   }
 
   /* --- Card --- */
