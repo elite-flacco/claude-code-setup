@@ -42,6 +42,7 @@
 - Use `padding` on `<td>` elements for spacing (not `margin` — Outlook ignores margin on most elements)
 - For vertical spacing between sections, use empty `<td>` with explicit `height` or `padding-top`/`padding-bottom`
 - Never use `<br>` for spacing — inconsistent rendering
+- For Outlook copy/paste workflows, keep vertical spacer rows tighter than browser-email spacing because pasted Word HTML often expands perceived gaps
 
 ## CSS
 
@@ -161,6 +162,14 @@ Outlook on Windows uses its own dark mode algorithm that inverts colors. To cont
 <table style="mso-table-lspace:0pt; mso-table-rspace:0pt;">
 ```
 
+### Outlook copy/paste specifics
+- Copy/paste into Outlook compose is not the same as sending finished email HTML; Outlook routes pasted content through the Word editor
+- Prefer table-based pills, badges, and chips instead of inline `span` elements when the user plans to paste into Outlook
+- Add `mso-padding-alt` to pill-like and button-like `<td>` cells so padding survives paste
+- Use conservative spacer rows between stacked cards, often smaller than what looks right in a browser preview
+- Prefer explicit table rows for repeated label/title/body stacks when the layout is card-heavy
+- If a layout looks correct in browser preview but too loose after paste, reduce spacer-row height before reducing inner card padding
+
 ### DOCTYPE and XML namespace
 ```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -210,6 +219,19 @@ font-family: 'Courier New', Courier, monospace;
       <a href="https://example.com" target="_blank" style="display:inline-block;padding:12px 24px;font-family:Arial,sans-serif;font-size:16px;color:#ffffff;text-decoration:none;border-radius:4px;background-color:#0066cc;">
         Click Here
       </a>
+    </td>
+  </tr>
+</table>
+```
+
+### Paste-safe pill badges
+Use this pattern for category badges when Outlook paste fidelity matters:
+
+```html
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+  <tr>
+    <td style="font-size:12px; font-weight:500; line-height:16px; padding-top:2px; padding-bottom:2px; padding-left:10px; padding-right:10px; mso-padding-alt:2px 10px 2px 10px; background-color:#fef3c7; color:#92400e; font-family:Arial, Helvetica, sans-serif; border-radius:999px;">
+      API Change
     </td>
   </tr>
 </table>
