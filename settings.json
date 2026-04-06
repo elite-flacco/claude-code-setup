@@ -42,6 +42,7 @@
       "Bash(git reset:*)"
     ]
   },
+  "model": "opus",
   "hooks": {
     "PreToolUse": [],
     "Notification": [
@@ -74,9 +75,21 @@
   "enabledPlugins": {
     "frontend-design@claude-plugins-official": true,
     "code-simplifier@claude-plugins-official": true,
-    "superpowers@claude-plugins-official": true
+    "superpowers@claude-plugins-official": true,
+    "codex@openai-codex": true,
+    "telegram@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    }
   },
   "alwaysThinkingEnabled": true,
+  "effortLevel": "medium",
+  "autoMemoryEnabled": false,
   "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754091193006
