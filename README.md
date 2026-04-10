@@ -8,7 +8,7 @@ This workspace provides a collection of custom commands, specialized agents, and
 
 ## Features
 
-### 📁 Commands (21 available)
+### 📁 Commands (20 available)
 
 All commands use the `cc-` prefix for Claude Code commands:
 
@@ -27,7 +27,6 @@ All commands use the `cc-` prefix for Claude Code commands:
 
 - **cc-init-project** - Initialize new projects with standardized structure
 - **cc-setup-design-system** - Create comprehensive Tailwind CSS design systems
-- **cc-setup-design-system-tw-v4** - Tailwind CSS v4 specific design system setup
 - **cc-add-theme-toggle** - Add dark mode/theme toggle to Next.js applications using next-themes
 - **cc-design-mode** - Switch projects into design/prototyping mode
 - **cc-add-scripts** - Add utility scripts to projects
@@ -58,28 +57,20 @@ All commands use the `cc-` prefix for Claude Code commands:
 
 - **openai** - Comprehensive OpenAI API implementation guidance covering Responses API, structured outputs, tool use, streaming, and realtime features
 
-### 🎨 Skills (20 available)
+### 🎨 Skills (12 available)
 
 - **agent-browser** - Browser automation and web interaction capabilities for agents
 - **azdo-create-pr** - Create Azure DevOps pull requests with proper formatting, emoji titles, and work item linking
 - **design-inspirations** - Create multiple visual variations of UI components
 - **fluid-typography** - Create responsive, fluid typography systems using CSS clamp() with mathematically precise scaling
 - **frontend-rules** - Strict rules and constraints for all frontend development in Next.js/React/Tailwind projects (design tokens, no arbitrary values, no inline styles, TypeScript enforcement)
-- **n8n-code-javascript** - JavaScript code generation and best practices for n8n workflow automation
-- **n8n-code-python** - Python code generation and best practices for n8n workflow automation
-- **n8n-expression-syntax** - n8n expression syntax and data transformation patterns
-- **n8n-mcp-tools-expert** - n8n MCP (Model Context Protocol) tools integration expertise
-- **n8n-node-configuration** - n8n node configuration and workflow building guidance
-- **n8n-validation-expert** - n8n workflow validation and error handling best practices
-- **n8n-workflow-patterns** - Common n8n workflow patterns and automation strategies
+- **html-to-email** - Convert HTML files into email-client-safe HTML with full Outlook (desktop/mobile), Gmail, Apple Mail, and Yahoo compatibility; supports copy/paste into Outlook compose
 - **openshift-deploy-nextjs** - Deploy Next.js applications to OpenShift from scratch with full configuration
 - **openshift-update-app** - Rebuild and redeploy existing Next.js applications on OpenShift
-- **remotion-best-practices** - Comprehensive Remotion video framework best practices covering 3D, animations, assets, audio, captions, charts, fonts, timing, and more
+- **setup-design-system-tw** - Set up a maintainable Tailwind CSS v4 design system with semantic tokens, fluid typography, badge color palette, and component classes
 - **skill-creator** - Tools and templates for creating new custom skills
-- **supabase-postgres-best-practices** - PostgreSQL and Supabase best practices for performance, security, indexing, connection management, and query optimization
 - **theme-toggle-creator** - Set up dark mode/theme toggle in Next.js applications with next-themes integration
-- **vercel-react-best-practices** - React and Next.js performance optimization covering rendering, async operations, bundling, client-side patterns, and server components
-- **web-design-guidelines** - Comprehensive web design principles and guidelines
+- **weekly-digest** - Summarize weekly Claude Code and Codex activity into a structured markdown digest
 
 ### ⚡ Hooks (3 available)
 
@@ -102,6 +93,10 @@ All commands use the `cc-` prefix for Claude Code commands:
 
 ## Recent Updates
 
+### v0.7.3 - 2026-04-06
+
+- 📝 Enhanced `html-to-email` skill with Outlook paste-safe guidance for copy/paste into Outlook compose window
+
 ### v0.7.2 - 2026-03-05
 
 - ✨ Added `frontend-rules` skill with comprehensive Tailwind/React/Next.js constraints covering design tokens, no arbitrary values, no inline styles, TypeScript enforcement, and component extraction rules
@@ -114,6 +109,7 @@ All commands use the `cc-` prefix for Claude Code commands:
 - 📝 Added browser automation documentation for `agent-browser` usage
 
 ### v0.7.0 - 2026-01-26
+
 - ✨ Added n8n skills suite for workflow automation (7 skills covering JavaScript, Python, expressions, MCP tools, node configuration, validation, and workflow patterns)
 - ✨ Added `design-inspirations` skill for creating multiple visual variations of UI components
 - ✨ Added `skill-creator` skill for guiding the creation of effective Claude Code skills
@@ -125,13 +121,16 @@ All commands use the `cc-` prefix for Claude Code commands:
 - 📝 Updated README to reflect all available skills documentation
 
 ### v0.6.5 - 2026-01-18
+
 - ✨ Added `fluid-typography` skill for implementing responsive typography with CSS clamp()
 - ✨ Added `theme-toggle-creator` skill for adding dark mode to Next.js applications using next-themes
 
 ### v0.6.4 - 2026-01-11
+
 - 🔧 Enhanced Dependabot configuration with ESLint package grouping for better dependency management
 
 ### v0.6.3 - 2025-12-15
+
 - ✨ Added `cc-explain-to-me` command for explaining error messages in plain, technically accurate language
 - ✨ Added `cc-add-theme-toggle` command for Next.js dark mode/theme toggle using next-themes
 - ✨ Enhanced `cc-add-scripts` command with additional utility script options
@@ -167,19 +166,17 @@ Automatically invoked by Claude Code when working on relevant tasks or can be ex
 ### Skills
 
 Reusable capabilities that can be invoked via slash commands for specialized tasks including:
+
 - Frontend rules enforcement for Next.js/React/Tailwind projects
+- Tailwind CSS v4 design system scaffolding
 - Typography systems and theme toggles
-- Video production with Remotion
-- PostgreSQL/Supabase optimization
-- React/Next.js performance best practices
+- Email-client-safe HTML conversion (Outlook, Gmail, Apple Mail)
 - Browser automation
 - Custom skill creation
-- n8n workflow automation (7 specialized skills)
 - UI design patterns and variations
-- Web design guidelines and best practices
 - Azure DevOps PR creation with formatting and work item linking
 - OpenShift deployment and update workflows for Next.js apps
-- Frontend development rules and constraints
+- Weekly activity digest generation from Claude Code and Codex logs
 
 ### Hooks
 
@@ -199,9 +196,9 @@ Automatically deployed when using `/cc-add-gh-workflows` command. Includes compr
 .
 ├── .claude/
 │   └── commands/        # Active Claude Code command (used by workflows)
-├── commands/            # Custom Claude Code commands (21 available, cc- prefixed)
+├── commands/            # Custom Claude Code commands (20 available, cc- prefixed)
 ├── agents/             # Specialized AI agents (1 available)
-├── skills/             # Reusable skills for specialized tasks (20 available)
+├── skills/             # Reusable skills for specialized tasks (12 available)
 ├── hooks/              # Event-driven TypeScript scripts (3 available)
 ├── github/             # GitHub workflow templates
 │   ├── workflows/      # CI/CD, Dependabot, and Claude integration workflows (5 available)
