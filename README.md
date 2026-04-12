@@ -93,7 +93,7 @@ All commands use the `cc-` prefix for Claude Code commands:
 
 ## Recent Updates
 
-### v0.7.3 - 2026-04-06
+### v0.7.3 - 2026-04-10
 
 - 📝 Enhanced `html-to-email` skill with Outlook paste-safe guidance for copy/paste into Outlook compose window
 
