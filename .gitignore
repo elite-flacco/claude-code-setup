@@ -34,3 +34,8 @@
 settings.json.backup
 history.jsonl
 stats-cache.json
+mcp-needs-auth-cache.json
+.caveman-active
+.claude/settings.local.json
+/channels
+/chrome/chrome-native-host.bat
