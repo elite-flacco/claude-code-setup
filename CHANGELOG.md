@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.7.4] - 2026-04-18
+
+### Added
+- `nc-save-learning` command for capturing conversation takeaways into structured markdown learning notes
+- `se-company-research` and `se-people-research` commands for sales engineering research workflows grounded in product and ICP context
+- `copy-writer`, `ui-designer-general`, and project-specific `ui-designer` agent templates
+- `notion-page` skill for creating and formatting Notion pages from markdown with reusable block patterns
+- `weekly-recap` scheduled task for personal weekly digest generation from Claude Code and Codex activity
+- Repository-level `AGENTS.md` instructions for Codex workflows
+
+### Changed
+- Enabled the Caveman plugin marketplace configuration in workspace settings
+- Updated README command, agent, skill, scheduled task, and project structure documentation to match the current workspace
+
 ## [0.7.3] - 2026-04-10
 
 ### Changed
