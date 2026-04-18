@@ -77,13 +77,20 @@
     "code-simplifier@claude-plugins-official": true,
     "superpowers@claude-plugins-official": true,
     "codex@openai-codex": true,
-    "telegram@claude-plugins-official": true
+    "telegram@claude-plugins-official": true,
+    "caveman@caveman": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
       "source": {
         "source": "github",
         "repo": "openai/codex-plugin-cc"
+      }
+    },
+    "caveman": {
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/caveman"
       }
     }
   },
