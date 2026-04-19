@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.7.4] - 2026-04-19
+
+### Added
+- `azdo-create-pr` skill for creating Azure DevOps pull requests with emoji titles and automatic work item linking
+- `openshift-deploy-nextjs` skill for deploying Next.js applications to OpenShift from scratch, including build configuration and route setup
+- `openshift-update-app` skill for rebuilding and redeploying existing Next.js apps on OpenShift
+- `weekly-digest` skill for summarizing weekly Claude Code and Codex activity logs into a markdown digest
+- `cc-clean-branches` command for cleaning up merged and stale git branches
+- `cc-create-worktrees-for-pr` command for creating git worktrees for all open pull requests
+- `cc-design-mode` command for running design tasks with browser testing validation
+- `cc-init-project` command for initializing new projects with essential structure
+- `cc-merge-branch` command for merging the current branch into main
+- `cc-remove-worktree` command for removing a git worktree
+- `cc-create-pr` command for creating GitHub pull requests
+- `cc-update-readme` command for keeping README in sync with recent project changes
+
+### Changed
+- Updated README to accurately reflect all available skills and commands
+
 ## [0.7.3] - 2026-04-10
 
 ### Changed
