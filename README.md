@@ -93,7 +93,7 @@ All commands use the `cc-` prefix for Claude Code commands:
 
 ## Recent Updates
 
-### v0.7.3 - 2026-04-06
+### v0.7.3 - 2026-04-10
 
 - 📝 Enhanced `html-to-email` skill with Outlook paste-safe guidance for copy/paste into Outlook compose window
 
@@ -249,6 +249,7 @@ This repository includes a comprehensive `CLAUDE.md` file with global instructio
 - **Independent Thinking & Technical Pushback** - Guidelines for technical collaboration and pushing back on unnecessary complexity
 - **File Navigation** - Best practices for efficient codebase exploration
 - **Codebase Exploration Efficiency** - Token-efficient exploration strategies for different codebase sizes
+- **Frontend Development** - TypeScript requirements, design system integration, and automatic `frontend-rules` skill invocation for Next.js/React/Tailwind projects
 - **Browser Automation** - Using `agent-browser` for web automation tasks
 
 ## Getting Started
