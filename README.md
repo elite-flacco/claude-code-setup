@@ -206,6 +206,8 @@ Automatically deployed when using `/cc-add-gh-workflows` command. Includes compr
 ├── scripts/            # Utility scripts
 ├── statusline-command.sh   # Bash statusline script for Claude Code status display
 ├── statusline-command.ps1  # PowerShell statusline script for Windows
+├── on-agent-complete.wav       # Audio notification for agent completion events
+├── on-agent-need-attention.wav # Audio notification for agent attention events
 ├── settings.json       # Claude Code workspace settings
 ├── CHANGELOG.md        # Project changelog
 └── README.md           # This file
