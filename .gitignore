@@ -17,6 +17,7 @@
 /sessions
 /session-env
 /telemetry
+/state
 /skills/ui-test
 /skills/find-skills
 /skills/n8n-code-javascript
@@ -30,7 +31,17 @@
 /skills/supabase-postgres-best-practices
 /skills/vercel-react-best-practices
 /skills/web-design-guidelines
+/skills/gsap
+/skills/hyperframes
+/skills/hyperframes-cli
+/skills/impeccable
+/skills/website-to-hyperframes
 .credentials.json
 settings.json.backup
 history.jsonl
 stats-cache.json
+mcp-needs-auth-cache.json
+.caveman-active
+.claude/settings.local.json
+/channels
+/chrome/chrome-native-host.bat
