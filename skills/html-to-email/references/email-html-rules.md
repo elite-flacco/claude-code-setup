@@ -170,6 +170,58 @@ Outlook on Windows uses its own dark mode algorithm that inverts colors. To cont
 - Prefer explicit table rows for repeated label/title/body stacks when the layout is card-heavy
 - If a layout looks correct in browser preview but too loose after paste, reduce spacer-row height before reducing inner card padding
 
+#### Card layout pattern (Outlook paste-safe)
+Cards must be a **direct `<td>`** in the row — NOT a nested wrapper `<table>`. Put the border, background, and padding directly on the card row's `<td>`.
+
+Inside the card, use an inner table with explicit spacer rows to separate badge, title, and description. Do NOT use `margin-top` on elements after a table — the Word engine collapses or ignores it unpredictably:
+
+```html
+<tr>
+  <td class="card-cell" style="background-color:#ffffff; border:1px solid #d4d4d4; border-radius:12px; padding-top:16px; padding-bottom:16px; padding-left:16px; padding-right:16px;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="mso-table-lspace:0pt; mso-table-rspace:0pt;">
+      <!-- badge row -->
+      <tr>
+        <td style="padding:0;">
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+            <tr><td style="...; mso-padding-alt:2px 10px 2px 10px; border-radius:9999px;">Badge Label</td></tr>
+          </table>
+        </td>
+      </tr>
+      <!-- spacer between badge and title -->
+      <tr><td style="height:12px; font-size:12px; line-height:12px; mso-line-height-rule:exactly;">&nbsp;</td></tr>
+      <!-- title row -->
+      <tr>
+        <td style="padding:0; font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:16px; font-weight:500; line-height:20px; mso-line-height-rule:exactly;">
+          <a href="URL" target="_blank" style="color:#0a0a0a; text-decoration:none;">Title text</a>
+        </td>
+      </tr>
+      <!-- spacer between title and description -->
+      <tr><td style="height:8px; font-size:8px; line-height:8px; mso-line-height-rule:exactly;">&nbsp;</td></tr>
+      <!-- description row -->
+      <tr>
+        <td style="padding:0; font-size:14px; line-height:22px; mso-line-height-rule:exactly; color:#0a0a0a; font-family:Arial,Helvetica,sans-serif;">Description text.</td>
+      </tr>
+    </table>
+  </td>
+</tr>
+```
+
+Do NOT use `margin-top` on a `<div>` or `<p>` after a `<table>` inside a card — use a spacer `<tr>` instead.
+
+#### Spacer rows (Outlook paste-safe)
+Always set matching `height`, `font-size`, and `line-height` on spacer rows. `font-size:0; line-height:0` is unreliable in the Word engine:
+
+```html
+<!-- correct -->
+<tr><td style="height:8px; font-size:8px; line-height:8px; mso-line-height-rule:exactly;">&nbsp;</td></tr>
+
+<!-- wrong — collapses unpredictably in Word paste -->
+<tr><td style="height:8px; font-size:0; line-height:0;">&nbsp;</td></tr>
+```
+
+#### Outer wrapper padding
+Use `padding:0` on the outer `<td align="center">` and handle top/bottom page padding with explicit spacer rows. Do NOT use `padding-top:40px` on the outer wrapper — Outlook paste can exaggerate this into large white blocks.
+
 ### DOCTYPE and XML namespace
 ```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
