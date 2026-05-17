@@ -97,7 +97,7 @@ All commands use the `cc-` prefix for Claude Code commands:
 
 - 📝 Enhanced `html-to-email` skill with Outlook paste-safe guidance for copy/paste into Outlook compose window
 
-### v0.7.2 - 2026-03-05
+### v0.7.2 - 2026-03-08
 
 - ✨ Added `frontend-rules` skill with comprehensive Tailwind/React/Next.js constraints covering design tokens, no arbitrary values, no inline styles, TypeScript enforcement, and component extraction rules
 - 📝 Updated `CLAUDE.md` frontend section to automatically invoke `frontend-rules` skill before writing or modifying any UI file
